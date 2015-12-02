@@ -81,12 +81,508 @@ profession:
       label: "Knight"
     - key: paladin
       label: "Paladin"
-
-	  
-	  
-	  trzeba dopisac odpowiedzi na choice;y
+acolyte_of_the_cult:
+	type : choice
+	message: "Twoj potwor to acolyte_of_the_cult"
+adept_of_the_cult:
+	type : choice
+	message: "Twoj potwor to adept_of_the_cult"
+amazon:
+	type : choice
+	message: "Twoj potwor to amazon"
+ancient_scarab:
+	type : choice
+	message: "Twoj potwor to ancient_scarab"
+assassin:
+	type : choice
+	message: "Twoj potwor to assassin"
+badger:
+	type : choice
+	message: "Twoj potwor to badger"
+bandit:
+	type : choice
+	message: "Twoj potwor to bandit"
+banshee:
+	type : choice
+	message: "Twoj potwor to banshee"
+barbarian_bloodwalker:
+	type : choice
+	message: "Twoj potwor to barbarian_bloodwalker"
+bat:
+	type : choice
+	message: "Twoj potwor to bat"
+bear:
+	type : choice
+	message: "Twoj potwor to bear"
+behemoth:
+	type : choice
+	message: "Twoj potwor to behemoth"
+betrayed_wraith:
+	type : choice
+	message: "Twoj potwor to betrayed_wraith"
+black_knight:
+	type : choice
+	message: "Twoj potwor to black_knight"
+blinghtwalker:
+	type : choice
+	message: "Twoj potwor to blinghtwalker"
+blood_crab:
+	type : choice
+	message: "Twoj potwor to blood_crab"
+blue_djinn:
+	type : choice
+	message: "Twoj potwor to blue_djinn"
+bonebeast:
+	type : choice
+	message: "Twoj potwor to bonebeast"
+bonelord:
+	type : choice
+	message: "Twoj potwor to bonelord"
+braindeath:
+	type : choice
+	message: "Twoj potwor to braindeath"
+bug:
+	type : choice
+	message: "Twoj potwor to bug"
+carniphila:
+	type : choice
+	message: "Twoj potwor to carniphila"
+carrion_worm:
+	type : choice
+	message: "Twoj potwor to carrion_worm"
+cave_rat:
+	type : choice
+	message: "Twoj potwor to cave_rat"
+centipede:
+	type : choice
+	message: "Twoj potwor to centipede"
+cobra:
+	type : choice
+	message: "Twoj potwor to cobra"
+crab:
+	type : choice
+	message: "Twoj potwor to crab"
+crocodile:
+	type : choice
+	message: "Twoj potwor to crocodile"
+crypt_shambler:
+	type : choice
+	message: "Twoj potwor to crypt_shambler"
+crystal_spider:
+	type : choice
+	message: "Twoj potwor to crystal_spider"
+cyclops:
+	type : choice
+	message: "Twoj potwor to cyclops"
+dark_monk:
+	type : choice
+	message: "Twoj potwor to dark_monk"
+dark_torturer:
+	type : choice
+	message: "Twoj potwor to dark_torturer"
+defiler:
+	type : choice
+	message: "Twoj potwor to defiler"
+demon:
+	type : choice
+	message: "Twoj potwor to demon"
+demon_skeleton:
+	type : choice
+	message: "Twoj potwor to demon_skeleton"
+destroyer:
+	type : choice
+	message: "Twoj potwor to destroyer"
+diabolic_imp:
+	type : choice
+	message: "Twoj potwor to diabolic_imp"
+dire_penguin:
+	type : choice
+	message: "Twoj potwor to dire_penguin"
+dragon:
+	type : choice
+	message: "Twoj potwor to dragon"
+dragon_lord:
+	type : choice
+	message: "Twoj potwor to dragon_lord"
+dwarf:
+	type : choice
+	message: "Twoj potwor to dwarf"
+dwarf_geomancer:
+	type : choice
+	message: "Twoj potwor to dwarf_geomancer"
+dwarf_guard:
+	type : choice
+	message: "Twoj potwor to dwarf_guard"
+dwarf_soldier:
+	type : choice
+	message: "Twoj potwor to dwarf_soldier"
+dworc_fleshhunter:
+	type : choice
+	message: "Twoj potwor to dworc_fleshhunter"
+dworc_venomsniper:
+	type : choice
+	message: "Twoj potwor to dworc_venomsniper"
+dworc_voodoomaster:
+	type : choice
+	message: "Twoj potwor to dworc_voodoomaster"
+efreet:
+	type : choice
+	message: "Twoj potwor to efreet"
+elder_bonelord:
+	type : choice
+	message: "Twoj potwor to elder_bonelord"
 elephant:
-    type: choice
-    message: "Wpadaj do lasu na slonie!"
-	
-	itp...
+	type : choice
+	message: "Twoj potwor to elephant"
+elf:
+	type : choice
+	message: "Twoj potwor to elf"
+elf_arcanist:
+	type : choice
+	message: "Twoj potwor to elf_arcanist"
+elf_scout:
+	type : choice
+	message: "Twoj potwor to elf_scout"
+enlightenergiad_of_the_cult:
+	type : choice
+	message: "Twoj potwor to enlightenergiad_of_the_cult"
+fire_devil:
+	type : choice
+	message: "Twoj potwor to fire_devil"
+fire_elemental:
+	type : choice
+	message: "Twoj potwor to fire_elemental"
+frog:
+	type : choice
+	message: "Twoj potwor to frog"
+frost_dragon:
+	type : choice
+	message: "Twoj potwor to frost_dragon"
+frost_giant:
+	type : choice
+	message: "Twoj potwor to frost_giant"
+frost_giantess:
+	type : choice
+	message: "Twoj potwor to frost_giantess"
+frost_troll:
+	type : choice
+	message: "Twoj potwor to frost_troll"
+fury:
+	type : choice
+	message: "Twoj potwor to fury"
+gargoyle:
+	type : choice
+	message: "Twoj potwor to gargoyle"
+gazer:
+	type : choice
+	message: "Twoj potwor to gazer"
+ghost:
+	type : choice
+	message: "Twoj potwor to ghost"
+ghoul:
+	type : choice
+	message: "Twoj potwor to ghoul"
+giant_spider:
+	type : choice
+	message: "Twoj potwor to giant_spider"
+goblin:
+	type : choice
+	message: "Twoj potwor to goblin"
+green_djinn:
+	type : choice
+	message: "Twoj potwor to green_djinn"
+hand_of_cursed_fate:
+	type : choice
+	message: "Twoj potwor to hand_of_cursed_fate"
+hellfire_fighter:
+	type : choice
+	message: "Twoj potwor to hellfire_fighter"
+hellhound:
+	type : choice
+	message: "Twoj potwor to hellhound"
+hero:
+	type : choice
+	message: "Twoj potwor to hero"
+hunter:
+	type : choice
+	message: "Twoj potwor to hunter"
+hyaena:
+	type : choice
+	message: "Twoj potwor to hyaena"
+hydra:
+	type : choice
+	message: "Twoj potwor to hydra"
+ice_golem:
+	type : choice
+	message: "Twoj potwor to ice_golem"
+ice_witch:
+	type : choice
+	message: "Twoj potwor to ice_witch"
+island_troll:
+	type : choice
+	message: "Twoj potwor to island_troll"
+juggernaut:
+	type : choice
+	message: "Twoj potwor to juggernaut"
+kongra:
+	type : choice
+	message: "Twoj potwor to kongra"
+larva:
+	type : choice
+	message: "Twoj potwor to larva"
+lion:
+	type : choice
+	message: "Twoj potwor to lion"
+lizard_sentinel:
+	type : choice
+	message: "Twoj potwor to lizard_sentinel"
+lizard_snakecharmer:
+	type : choice
+	message: "Twoj potwor to lizard_snakecharmer"
+lizard_templar:
+	type : choice
+	message: "Twoj potwor to lizard_templar"
+lost_soul:
+	type : choice
+	message: "Twoj potwor to lost_soul"
+mammoth:
+	type : choice
+	message: "Twoj potwor to mammoth"
+man_in_the_cave:
+	type : choice
+	message: "Twoj potwor to man_in_the_cave"
+marid:
+	type : choice
+	message: "Twoj potwor to marid"
+massive_water_elemental:
+	type : choice
+	message: "Twoj potwor to massive_water_elemental"
+merlkin:
+	type : choice
+	message: "Twoj potwor to merlkin"
+minotaur:
+	type : choice
+	message: "Twoj potwor to minotaur"
+minotaur_archer:
+	type : choice
+	message: "Twoj potwor to minotaur_archer"
+minotaur_guard:
+	type : choice
+	message: "Twoj potwor to minotaur_guard"
+minotaur_mage:
+	type : choice
+	message: "Twoj potwor to minotaur_mage"
+monk:
+	type : choice
+	message: "Twoj potwor to monk"
+mummy:
+	type : choice
+	message: "Twoj potwor to mummy"
+nazwa:
+	type : choice
+	message: "Twoj potwor to nazwa"
+nekromancer:
+	type : choice
+	message: "Twoj potwor to nekromancer"
+nightmare:
+	type : choice
+	message: "Twoj potwor to nightmare"
+nomad:
+	type : choice
+	message: "Twoj potwor to nomad"
+novice_of_the_cult:
+	type : choice
+	message: "Twoj potwor to novice_of_the_cult"
+orc:
+	type : choice
+	message: "Twoj potwor to orc"
+orc_berserker:
+	type : choice
+	message: "Twoj potwor to orc_berserker"
+orc_leader:
+	type : choice
+	message: "Twoj potwor to orc_leader"
+orc_rider:
+	type : choice
+	message: "Twoj potwor to orc_rider"
+orc_shaman:
+	type : choice
+	message: "Twoj potwor to orc_shaman"
+orc_spearman:
+	type : choice
+	message: "Twoj potwor to orc_spearman"
+orc_warlord:
+	type : choice
+	message: "Twoj potwor to orc_warlord"
+orc_warrior:
+	type : choice
+	message: "Twoj potwor to orc_warrior"
+penguin:
+	type : choice
+	message: "Twoj potwor to penguin"
+phantasm:
+	type : choice
+	message: "Twoj potwor to phantasm"
+pirate_buccaneer:
+	type : choice
+	message: "Twoj potwor to pirate_buccaneer"
+pirate_corsair:
+	type : choice
+	message: "Twoj potwor to pirate_corsair"
+pirate_cutthroat:
+	type : choice
+	message: "Twoj potwor to pirate_cutthroat"
+pirate_ghost:
+	type : choice
+	message: "Twoj potwor to pirate_ghost"
+pirate_marauder:
+	type : choice
+	message: "Twoj potwor to pirate_marauder"
+pirate_skeleton:
+	type : choice
+	message: "Twoj potwor to pirate_skeleton"
+plaguesmith:
+	type : choice
+	message: "Twoj potwor to plaguesmith"
+poison_spider:
+	type : choice
+	message: "Twoj potwor to poison_spider"
+polar_bear:
+	type : choice
+	message: "Twoj potwor to polar_bear"
+priestess:
+	type : choice
+	message: "Twoj potwor to priestess"
+quara_constrictor:
+	type : choice
+	message: "Twoj potwor to quara_constrictor"
+quara_constrictor_scout:
+	type : choice
+	message: "Twoj potwor to quara_constrictor_scout"
+quara_hydromancer:
+	type : choice
+	message: "Twoj potwor to quara_hydromancer"
+quara_hydromancer_scout:
+	type : choice
+	message: "Twoj potwor to quara_hydromancer_scout"
+quara_mantassin_scout:
+	type : choice
+	message: "Twoj potwor to quara_mantassin_scout"
+quara_pincher:
+	type : choice
+	message: "Twoj potwor to quara_pincher"
+quara_pincher_scout:
+	type : choice
+	message: "Twoj potwor to quara_pincher_scout"
+quara_predator:
+	type : choice
+	message: "Twoj potwor to quara_predator"
+quara_predator_scout:
+	type : choice
+	message: "Twoj potwor to quara_predator_scout"
+rat:
+	type : choice
+	message: "Twoj potwor to rat"
+rotworm:
+	type : choice
+	message: "Twoj potwor to rotworm"
+scarab:
+	type : choice
+	message: "Twoj potwor to scarab"
+scorpion:
+	type : choice
+	message: "Twoj potwor to scorpion"
+serpent_spawn:
+	type : choice
+	message: "Twoj potwor to serpent_spawn"
+sibang:
+	type : choice
+	message: "Twoj potwor to sibang"
+skeleton:
+	type : choice
+	message: "Twoj potwor to skeleton"
+skunk:
+	type : choice
+	message: "Twoj potwor to skunk"
+slime:
+	type : choice
+	message: "Twoj potwor to slime"
+smuggler:
+	type : choice
+	message: "Twoj potwor to smuggler"
+snake:
+	type : choice
+	message: "Twoj potwor to snake"
+spectre:
+	type : choice
+	message: "Twoj potwor to spectre"
+spider:
+	type : choice
+	message: "Twoj potwor to spider"
+spit_nettle:
+	type : choice
+	message: "Twoj potwor to spit_nettle"
+stalker:
+	type : choice
+	message: "Twoj potwor to stalker"
+stone_golem:
+	type : choice
+	message: "Twoj potwor to stone_golem"
+swamp_troll:
+	type : choice
+	message: "Twoj potwor to swamp_troll"
+tarantula:
+	type : choice
+	message: "Twoj potwor to tarantula"
+terror_bird:
+	type : choice
+	message: "Twoj potwor to terror_bird"
+thornback_tortoise:
+	type : choice
+	message: "Twoj potwor to thornback_tortoise"
+tiger:
+	type : choice
+	message: "Twoj potwor to tiger"
+toad:
+	type : choice
+	message: "Twoj potwor to toad"
+tortoise:
+	type : choice
+	message: "Twoj potwor to tortoise"
+troll:
+	type : choice
+	message: "Twoj potwor to troll"
+undead_dragon:
+	type : choice
+	message: "Twoj potwor to undead_dragon"
+valkyrie:
+	type : choice
+	message: "Twoj potwor to valkyrie"
+vampire:
+	type : choice
+	message: "Twoj potwor to vampire"
+war_wolf:
+	type : choice
+	message: "Twoj potwor to war_wolf"
+warlock:
+	type : choice
+	message: "Twoj potwor to warlock"
+wasp:
+	type : choice
+	message: "Twoj potwor to wasp"
+water_elemental:
+	type : choice
+	message: "Twoj potwor to water_elemental"
+wild_warrior:
+	type : choice
+	message: "Twoj potwor to wild_warrior"
+winter_wolf:
+	type : choice
+	message: "Twoj potwor to winter_wolf"
+witch:
+	type : choice
+	message: "Twoj potwor to witch"
+wolf:
+	type : choice
+	message: "Twoj potwor to wolf"
+

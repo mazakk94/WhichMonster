@@ -113,18 +113,3 @@ rule "Do you want to be like a Witcher?"
 	then
 		Communication.askQuestion("witcher_wannabe");
 end
-
-rule "Ask if user like Dragonforce"
-	salience 2
-	when
-		Fact(name("hardcores"), value(true))
-		(or
-			Fact(name("year"), value("druid"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("over1000notes"), value(false))
-		not Fact(name("level"), value("short"))
-	then
-		Communication.askQuestion("dragonforce");
-end
-//18

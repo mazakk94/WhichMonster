@@ -1,70 +1,76 @@
-difficulty:
-    type: multiple
-    message: "Ktory masz level?"
-    options:
-    - key: easy
-      label: "Ĺ�atwa"
-    - key: medium
-      label: "Ĺšrednia"
-    - key: hard
-      label: "Trudna"
-    - key: no_care
-      label: "Bez znaczenia"
-hardcores:
-    type: boolean
-    message: "Czy bierzesz pod uwagÄ™ najciÄ™ĹĽsze hardkory z serii GH?"
-lame_song:
-    type: boolean
-    message: "Czy oczekujesz piosenki dla lamusa (o najniĹĽszym stopniu trudnoĹ›ci)?"
-without_solo:
-    type: boolean
-    message: "Czy piosenka powinna byÄ‡ pozbawiona solo?"
-below500notes:
-    type: boolean
-    message: "Czy piosenka powinna mieÄ‡ do 500 nutek?"
-like_alternative_rock:
-    type: boolean
-    message: "Czy lubisz rock alternatywny?"
-like_indie_rock:
-    type: boolean
-    message: "Czy lubisz indie rock?"
-like_glam_metal:
-    type: boolean
-    message: "Czy lubisz glam metal?"
-over1000notes:
-    type: boolean
-    message: "Czy piosenka powinna mieÄ‡ powyĹĽej 1000 nutek?"
-about800notes:
-    type: boolean
-    message: "Czy piosenka powinna mieÄ‡ okoĹ‚o 800 nutek?"
-dragonforce:
-    type: boolean
-    message: "Lubisz Dragonforce?"
-like_heavy_metal:
-    type: boolean
-    message: "Ale heavy metal lubisz?"
-like_blues_rock:
-    type: boolean
-    message: "A moĹĽe blues rock?"
-severe_solos:
-    type: boolean
-    message: "Czy piosenka powinna posiadaÄ‡ srogie, wyraĹşne solĂłwki?"
-like_hard_rock:
-    type: boolean
-    message: "A co powiesz na hard rocka?"
 level:
     type: multiple
-    message: "Ĺ»yczysz sobie piosenkÄ™ krĂłtkÄ… (poniĹĽej 5 minut) czy dĹ‚ugÄ… (co najmniej 5 min)?"
+    message: "Z jakiego przedzialu masz level?"
     options:
-    - key: short
-      label: "KrĂłtka"
-    - key: long
-      label: "DĹ‚uga"
-    - key: no_care
-      label: "Bez znaczenia"
-year:
+    - key: jeden
+      label: "1-20"
+    - key: dwa
+      label: "21-30"
+    - key: trzy
+      label: "31-70"
+    - key: cztery
+      label: "71-150"
+horror_like:
+    type: boolean
+    message: "Lubisz horrory?"
+witcher_wannabe:
     type: multiple
-    message: "jaka profesja?"
+    message: "Chcesz byc jak Wiedzmin?"
+    options:
+    - key: tak
+      label: "Tak"
+    - key: nie
+      label: "Nie"
+rat_fear:
+    type: boolean
+    message: "Czy boisz sie szczurów?"
+animal_killer:
+    type: boolean
+    message: "Uderzylbys zwierze?"
+person_killer:
+    type: boolean
+    message: "Upolowalbys czlowieka?"
+insect_killer:
+    type: boolean
+    message: "Zabijasz robale?"
+darkness_fear:
+    type: boolean
+    message: "Czy boisz sie ciemnosci?"
+rod_type:
+    type: multiple
+    message: "Jaki typ rozdzki preferujesz?"
+    options:
+    - key: earth
+      label: "Ziemia"
+    - key: death
+      label: "Smierc"
+    - key: ice
+      label: "Lod"
+wand_type:
+    type: multiple
+    message: "Jaki typ rozdzki preferujesz?"
+    options:
+    - key: energy
+      label: "Energia"
+    - key: death
+      label: "Smierc"
+    - key: fire
+      label: "Ogien"
+place:
+    type: multiple
+    message: "W jakim klimacie chcesz przebywac?"
+    options:
+    - key: desert
+      label: "Pustynia"
+    - key: forest
+      label: "Lasy"
+    - key: dungeon
+      label: "Podziemia"
+    - key: water
+      label: "Woda"
+profession:
+    type: multiple
+    message: "Jaka profesja?"
     options:
     - key: sorc
       label: "Sorcerer"
@@ -74,104 +80,507 @@ year:
       label: "Knight"
     - key: paladin
       label: "Paladin"
-    - key: no_care
-      label: "No care"
-when_you_were_young:
+acolyte_of_the_cult:
     type: choice
-    message: "Piosenka dobra na rozgrzanie palcĂłw:\nThe Killers \"When you were young\"\nZaakceptowaÄ‡?"
-i_love_rock_and_roll:
+    message: "Twoj potwor to acolyte_of_the_cult"
+adept_of_the_cult:
     type: choice
-    message: "Po najmniejszej linii oporu...\nJoann Jett \"I love Rock 'n' Roll\"\nZaakceptowaÄ‡?"
-slow_ride:
+    message: "Twoj potwor to adept_of_the_cult"
+amazon:
     type: choice
-    message: "Wspomnienia z poczÄ…tkĂłw GH3...:\nFoghat \"Slow Ride\"\nZaakceptowaÄ‡?"
-iron_man:
+    message: "Twoj potwor to amazon"
+ancient_scarab:
     type: choice
-    message: "Avergersi! Co powiesz na:\nBlack Sabbath \"Iron Man\"?\nZaakceptowaÄ‡?"
-take_me_out:
+    message: "Twoj potwor to ancient_scarab"
+assassin:
     type: choice
-    message: "Prawdziwy hipster! Piosenka dla ciebie to:\nFranz Ferdinand \"Take Me Out\"\nZaakceptowaÄ‡?"
-cherry_pie:
+    message: "Twoj potwor to assassin"
+badger:
     type: choice
-    message: "Sheeeeeeeees my cherry pie!\nWarrant \"Cherry Pie\"\nZaakceptowaÄ‡?"
-talk_dirty_to_me:
+    message: "Twoj potwor to badger"
+bandit:
     type: choice
-    message: "Ĺ�atwa piosenka dla fana glam metalu raz!\nPoison \"Talk Dirty to Me\"\nZaakceptowaÄ‡?"
-fly_on_the_wall:
+    message: "Twoj potwor to bandit"
+banshee:
     type: choice
-    message: "Serio jest taka piosenka? Tak?\nDin \"Fly on The Wall\"\nZaakceptowaÄ‡?"
-carry_on_wayward_son:
+    message: "Twoj potwor to banshee"
+barbarian_bloodwalker:
     type: choice
-    message: "CaĹ‚kiem fajna ballada z pianinem w tle:\nKansas \"Carry on Wayward Son\"\nZaakceptowaÄ‡?"
-through_the_fire_and_flames:
+    message: "Twoj potwor to barbarian_bloodwalker"
+bat:
     type: choice
-    message: "Ciekawe cwaniaku czy przejdziesz:\nDragonforce \"Through the Fire and Flames\"\nZaakceptowaÄ‡?"
-fury_of_the_storm:
+    message: "Twoj potwor to bat"
+bear:
     type: choice
-    message: "W takim razie co powiesz na:\nDragonforce \"Fury of the Storm\"\nZaakceptowaÄ‡?"
-the_number_of_the_beast:
+    message: "Twoj potwor to bear"
+behemoth:
     type: choice
-    message: "six-six-six is the:\nIron Maiden \"Number of The Beast\"\nZaakceptowaÄ‡?"
-one:
+    message: "Twoj potwor to behemoth"
+betrayed_wraith:
     type: choice
-    message: "Za chwilÄ™ przekonamy siÄ™, kto jest prawdziwym Guitar Hero, a kto tylko udaje:\nMetallica \"One\"\nZaakceptowaÄ‡?"
-seek_and_destroy:
+    message: "Twoj potwor to betrayed_wraith"
+black_knight:
     type: choice
-    message: "Nie ma nic lepszego niĹĽ dobra nawalanka z lat 80.:\nMetallica \"Seek and Destroy\"\nZaakceptowaÄ‡?"
-free_bird:
+    message: "Twoj potwor to black_knight"
+blinghtwalker:
     type: choice
-    message: "Jedno z najlepszych solo wszechczasĂłw!:\nLynard Skynard \"Free Bird\"\nZaakceptowaÄ‡?"
-welcome_to_the_jungle:
+    message: "Twoj potwor to blinghtwalker"
+blood_crab:
     type: choice
-    message: "You know where you are?! You're in the jungle, babe!\nGuns N' Roses \"Welcome to the Jungle\"\nZaakceptowaÄ‡?"
-cliffs_of_dover:
+    message: "Twoj potwor to blood_crab"
+blue_djinn:
     type: choice
-    message: "Jedyna piosenka, ktĂłrÄ… potrafisz dobrze zaĹ›piewaÄ‡!\nEric Johnson \"Cliffs Of Dover\"\nZaakceptowaÄ‡?"
-electric_eye:
+    message: "Twoj potwor to blue_djinn"
+bonebeast:
     type: choice
-    message: "Judas Priest \"Electric Eye\"\nZaakceptowaÄ‡?"
-holy_diver:
+    message: "Twoj potwor to bonebeast"
+bonelord:
     type: choice
-    message: "Dio \"Holy Diver \"\nZaakceptowaÄ‡?"
-no_one_like_you:
+    message: "Twoj potwor to bonelord"
+braindeath:
     type: choice
-    message: "Scorpions\" No One Like You\"\nZaakceptowaÄ‡?"
-cant_you_hear_me_knocking:
+    message: "Twoj potwor to braindeath"
+bug:
     type: choice
-    message: "A kamienie wciÄ…ĹĽ siÄ™ toczÄ…...\nThe Rolling Stones \"Can't You Hear Me Knocking\"\nZaakceptowaÄ‡?"
-sweet_child_o_mine:
+    message: "Twoj potwor to bug"
+carniphila:
     type: choice
-    message: "Test na eksperta: zagraj pierwsze 190 nut ze wstÄ™pu bez skuchy!\nGuns N' Roses \"Sweet Child O' Mine\"\nZaakceptowaÄ‡?"
-them_bones:
+    message: "Twoj potwor to carniphila"
+carrion_worm:
     type: choice
-    message: "Alice in Chains \"Them Bones\"\nZaakceptowaÄ‡?"
-paranoid:
+    message: "Twoj potwor to carrion_worm"
+cave_rat:
     type: choice
-    message: "Black Sabbath \"Paranoid\"\nZaakceptowaÄ‡?"
-woman:
+    message: "Twoj potwor to cave_rat"
+centipede:
     type: choice
-    message: "Zbieraj star powera podczas bridga i wjeĹĽdĹĽasz na solo x8!\nWolfmother \"Woman\"\nZaakceptowaÄ‡?"
-smoke_on_the_water:
+    message: "Twoj potwor to centipede"
+cobra:
     type: choice
-    message: "KaĹĽdy kojarzy ten poczÄ…tek!\nDeep purple \"Smoke on The Water\"\nZaakceptowaÄ‡?"
-wrath_child:
+    message: "Twoj potwor to cobra"
+crab:
     type: choice
-    message: "Iron Maiden \"Wrath Child\"\nZaakceptowaÄ‡?"
-monkey_wrench:
+    message: "Twoj potwor to crab"
+crocodile:
     type: choice
-    message: "Uniwersalny Dave Grohl, tym razem jako Ĺ›piewak:\nFoo Fighters \"Monkey Wrench\"\nZaakceptowaÄ‡?"
-the_unforgiven:
+    message: "Twoj potwor to crocodile"
+crypt_shambler:
     type: choice
-    message: "LeciaĹ‚o wczoraj w RFM! PrzysiÄ™gam!\nMetallica \"The Unforgiven\"\nZaakceptowaÄ‡?"
-suck_my_kiss:
+    message: "Twoj potwor to crypt_shambler"
+crystal_spider:
     type: choice
-    message: "Info od:\nRed Hot Chilli Peppers \"Suck My Kiss\"\nZaakceptowaÄ‡?"
-here_it_goes_again:
+    message: "Twoj potwor to crystal_spider"
+cyclops:
     type: choice
-    message: "No to jeszcze raz!\nOk Go \"Here It Goes Again\"\nZaakceptowaÄ‡?"
-tribute:
+    message: "Twoj potwor to cyclops"
+dark_monk:
     type: choice
-    message: "This song doesn't sound anything like this system!\nTenaciuos D \"Tribute\"\nZaakceptowaÄ‡?"
-thunderstruck:
+    message: "Twoj potwor to dark_monk"
+dark_torturer:
     type: choice
-    message: "Na na na na na na:!\nAC/DC \"Thunderstruck\"\nZaakceptowaÄ‡?"
+    message: "Twoj potwor to dark_torturer"
+defiler:
+    type: choice
+    message: "Twoj potwor to defiler"
+demon:
+    type: choice
+    message: "Twoj potwor to demon"
+demon_skeleton:
+    type: choice
+    message: "Twoj potwor to demon_skeleton"
+destroyer:
+    type: choice
+    message: "Twoj potwor to destroyer"
+diabolic_imp:
+    type: choice
+    message: "Twoj potwor to diabolic_imp"
+dire_penguin:
+    type: choice
+    message: "Twoj potwor to dire_penguin"
+dragon:
+    type: choice
+    message: "Twoj potwor to dragon"
+dragon_lord:
+    type: choice
+    message: "Twoj potwor to dragon_lord"
+dwarf:
+    type: choice
+    message: "Twoj potwor to dwarf"
+dwarf_geomancer:
+    type: choice
+    message: "Twoj potwor to dwarf_geomancer"
+dwarf_guard:
+    type: choice
+    message: "Twoj potwor to dwarf_guard"
+dwarf_soldier:
+    type: choice
+    message: "Twoj potwor to dwarf_soldier"
+dworc_fleshhunter:
+    type: choice
+    message: "Twoj potwor to dworc_fleshhunter"
+dworc_venomsniper:
+    type: choice
+    message: "Twoj potwor to dworc_venomsniper"
+dworc_voodoomaster:
+    type: choice
+    message: "Twoj potwor to dworc_voodoomaster"
+efreet:
+    type: choice
+    message: "Twoj potwor to efreet"
+elder_bonelord:
+    type: choice
+    message: "Twoj potwor to elder_bonelord"
+elephant:
+    type: choice
+    message: "Twoj potwor to elephant"
+elf:
+    type: choice
+    message: "Twoj potwor to elf"
+elf_arcanist:
+    type: choice
+    message: "Twoj potwor to elf_arcanist"
+elf_scout:
+    type: choice
+    message: "Twoj potwor to elf_scout"
+enlightenergiad_of_the_cult:
+    type: choice
+    message: "Twoj potwor to enlightenergiad_of_the_cult"
+fire_devil:
+    type: choice
+    message: "Twoj potwor to fire_devil"
+fire_elemental:
+    type: choice
+    message: "Twoj potwor to fire_elemental"
+frog:
+    type: choice
+    message: "Twoj potwor to frog"
+frost_dragon:
+    type: choice
+    message: "Twoj potwor to frost_dragon"
+frost_giant:
+    type: choice
+    message: "Twoj potwor to frost_giant"
+frost_giantess:
+    type: choice
+    message: "Twoj potwor to frost_giantess"
+frost_troll:
+    type: choice
+    message: "Twoj potwor to frost_troll"
+fury:
+    type: choice
+    message: "Twoj potwor to fury"
+gargoyle:
+    type: choice
+    message: "Twoj potwor to gargoyle"
+gazer:
+    type: choice
+    message: "Twoj potwor to gazer"
+ghost:
+    type: choice
+    message: "Twoj potwor to ghost"
+ghoul:
+    type: choice
+    message: "Twoj potwor to ghoul"
+giant_spider:
+    type: choice
+    message: "Twoj potwor to giant_spider"
+goblin:
+    type: choice
+    message: "Twoj potwor to goblin"
+green_djinn:
+    type: choice
+    message: "Twoj potwor to green_djinn"
+hand_of_cursed_fate:
+    type: choice
+    message: "Twoj potwor to hand_of_cursed_fate"
+hellfire_fighter:
+    type: choice
+    message: "Twoj potwor to hellfire_fighter"
+hellhound:
+    type: choice
+    message: "Twoj potwor to hellhound"
+hero:
+    type: choice
+    message: "Twoj potwor to hero"
+hunter:
+    type: choice
+    message: "Twoj potwor to hunter"
+hyaena:
+    type: choice
+    message: "Twoj potwor to hyaena"
+hydra:
+    type: choice
+    message: "Twoj potwor to hydra"
+ice_golem:
+    type: choice
+    message: "Twoj potwor to ice_golem"
+ice_witch:
+    type: choice
+    message: "Twoj potwor to ice_witch"
+island_troll:
+    type: choice
+    message: "Twoj potwor to island_troll"
+juggernaut:
+    type: choice
+    message: "Twoj potwor to juggernaut"
+kongra:
+    type: choice
+    message: "Twoj potwor to kongra"
+larva:
+    type: choice
+    message: "Twoj potwor to larva"
+lion:
+    type: choice
+    message: "Twoj potwor to lion"
+lizard_sentinel:
+    type: choice
+    message: "Twoj potwor to lizard_sentinel"
+lizard_snakecharmer:
+    type: choice
+    message: "Twoj potwor to lizard_snakecharmer"
+lizard_templar:
+    type: choice
+    message: "Twoj potwor to lizard_templar"
+lost_soul:
+    type: choice
+    message: "Twoj potwor to lost_soul"
+mammoth:
+    type: choice
+    message: "Twoj potwor to mammoth"
+man_in_the_cave:
+    type: choice
+    message: "Twoj potwor to man_in_the_cave"
+marid:
+    type: choice
+    message: "Twoj potwor to marid"
+massive_water_elemental:
+    type: choice
+    message: "Twoj potwor to massive_water_elemental"
+merlkin:
+    type: choice
+    message: "Twoj potwor to merlkin"
+minotaur:
+    type: choice
+    message: "Twoj potwor to minotaur"
+minotaur_archer:
+    type: choice
+    message: "Twoj potwor to minotaur_archer"
+minotaur_guard:
+    type: choice
+    message: "Twoj potwor to minotaur_guard"
+minotaur_mage:
+    type: choice
+    message: "Twoj potwor to minotaur_mage"
+monk:
+    type: choice
+    message: "Twoj potwor to monk"
+mummy:
+    type: choice
+    message: "Twoj potwor to mummy"
+nazwa:
+    type: choice
+    message: "Twoj potwor to nazwa"
+nekromancer:
+    type: choice
+    message: "Twoj potwor to nekromancer"
+nightmare:
+    type: choice
+    message: "Twoj potwor to nightmare"
+nomad:
+    type: choice
+    message: "Twoj potwor to nomad"
+novice_of_the_cult:
+    type: choice
+    message: "Twoj potwor to novice_of_the_cult"
+orc:
+    type: choice
+    message: "Twoj potwor to orc"
+orc_berserker:
+    type: choice
+    message: "Twoj potwor to orc_berserker"
+orc_leader:
+    type: choice
+    message: "Twoj potwor to orc_leader"
+orc_rider:
+    type: choice
+    message: "Twoj potwor to orc_rider"
+orc_shaman:
+    type: choice
+    message: "Twoj potwor to orc_shaman"
+orc_spearman:
+    type: choice
+    message: "Twoj potwor to orc_spearman"
+orc_warlord:
+    type: choice
+    message: "Twoj potwor to orc_warlord"
+orc_warrior:
+    type: choice
+    message: "Twoj potwor to orc_warrior"
+penguin:
+    type: choice
+    message: "Twoj potwor to penguin"
+phantasm:
+    type: choice
+    message: "Twoj potwor to phantasm"
+pirate_buccaneer:
+    type: choice
+    message: "Twoj potwor to pirate_buccaneer"
+pirate_corsair:
+    type: choice
+    message: "Twoj potwor to pirate_corsair"
+pirate_cutthroat:
+    type: choice
+    message: "Twoj potwor to pirate_cutthroat"
+pirate_ghost:
+    type: choice
+    message: "Twoj potwor to pirate_ghost"
+pirate_marauder:
+    type: choice
+    message: "Twoj potwor to pirate_marauder"
+pirate_skeleton:
+    type: choice
+    message: "Twoj potwor to pirate_skeleton"
+plaguesmith:
+    type: choice
+    message: "Twoj potwor to plaguesmith"
+poison_spider:
+    type: choice
+    message: "Twoj potwor to poison_spider"
+polar_bear:
+    type: choice
+    message: "Twoj potwor to polar_bear"
+priestess:
+    type: choice
+    message: "Twoj potwor to priestess"
+quara_constrictor:
+    type: choice
+    message: "Twoj potwor to quara_constrictor"
+quara_constrictor_scout:
+    type: choice
+    message: "Twoj potwor to quara_constrictor_scout"
+quara_hydromancer:
+    type: choice
+    message: "Twoj potwor to quara_hydromancer"
+quara_hydromancer_scout:
+    type: choice
+    message: "Twoj potwor to quara_hydromancer_scout"
+quara_mantassin_scout:
+    type: choice
+    message: "Twoj potwor to quara_mantassin_scout"
+quara_pincher:
+    type: choice
+    message: "Twoj potwor to quara_pincher"
+quara_pincher_scout:
+    type: choice
+    message: "Twoj potwor to quara_pincher_scout"
+quara_predator:
+    type: choice
+    message: "Twoj potwor to quara_predator"
+quara_predator_scout:
+    type: choice
+    message: "Twoj potwor to quara_predator_scout"
+rat:
+    type: choice
+    message: "Twoj potwor to rat"
+rotworm:
+    type: choice
+    message: "Twoj potwor to rotworm"
+scarab:
+    type: choice
+    message: "Twoj potwor to scarab"
+scorpion:
+    type: choice
+    message: "Twoj potwor to scorpion"
+serpent_spawn:
+    type: choice
+    message: "Twoj potwor to serpent_spawn"
+sibang:
+    type: choice
+    message: "Twoj potwor to sibang"
+skeleton:
+    type: choice
+    message: "Twoj potwor to skeleton"
+skunk:
+    type: choice
+    message: "Twoj potwor to skunk"
+slime:
+    type: choice
+    message: "Twoj potwor to slime"
+smuggler:
+    type: choice
+    message: "Twoj potwor to smuggler"
+snake:
+    type: choice
+    message: "Twoj potwor to snake"
+spectre:
+    type: choice
+    message: "Twoj potwor to spectre"
+spider:
+    type: choice
+    message: "Twoj potwor to spider"
+spit_nettle:
+    type: choice
+    message: "Twoj potwor to spit_nettle"
+stalker:
+    type: choice
+    message: "Twoj potwor to stalker"
+stone_golem:
+    type: choice
+    message: "Twoj potwor to stone_golem"
+swamp_troll:
+    type: choice
+    message: "Twoj potwor to swamp_troll"
+tarantula:
+    type: choice
+    message: "Twoj potwor to tarantula"
+terror_bird:
+    type: choice
+    message: "Twoj potwor to terror_bird"
+thornback_tortoise:
+    type: choice
+    message: "Twoj potwor to thornback_tortoise"
+tiger:
+    type: choice
+    message: "Twoj potwor to tiger"
+toad:
+    type: choice
+    message: "Twoj potwor to toad"
+tortoise:
+    type: choice
+    message: "Twoj potwor to tortoise"
+troll:
+    type: choice
+    message: "Twoj potwor to troll"
+undead_dragon:
+    type: choice
+    message: "Twoj potwor to undead_dragon"
+valkyrie:
+    type: choice
+    message: "Twoj potwor to valkyrie"
+vampire:
+    type: choice
+    message: "Twoj potwor to vampire"
+war_wolf:
+    type: choice
+    message: "Twoj potwor to war_wolf"
+warlock:
+    type: choice
+    message: "Twoj potwor to warlock"
+wasp:
+    type: choice
+    message: "Twoj potwor to wasp"
+water_elemental:
+    type: choice
+    message: "Twoj potwor to water_elemental"
+wild_warrior:
+    type: choice
+    message: "Twoj potwor to wild_warrior"
+winter_wolf:
+    type: choice
+    message: "Twoj potwor to winter_wolf"
+witch:
+    type: choice
+    message: "Twoj potwor to witch"
+wolf:
+    type: choice
+    message: "Twoj potwor to wolf"

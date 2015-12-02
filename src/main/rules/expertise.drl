@@ -3,7 +3,7 @@ package rules
 import com.sample.DroolsTest.*;
 import com.java_layer.*;
 
-rule "Song chosen"
+rule "Monster picked"
 	salience 2000
 	when
 		Fact(name("chosen"), value(true))
@@ -12,7 +12,7 @@ rule "Song chosen"
 		drools.halt();
 end
 
-rule "No matching song in database"
+rule "No monster"
 	salience -1
 	when
 	then
@@ -20,192 +20,96 @@ rule "No matching song in database"
 		drools.halt();
 end
 
-rule "Ask about difficulty"
+rule "Ask about profession"
 	salience 10
 	when
 	then
-		Communication.askQuestion("difficulty");
+		Communication.askQuestion("profession");
 end
 
-rule "Ask about year"
-	salience 10
+rule "What wand do you want to use?"
+	salience 5
 	when
-		Fact(name("difficulty"))
+		Fact(name("profession"), value("sorc"))
 	then
-		Communication.askQuestion("year");
+		Communication.askQuestion("wand_type");
 end
 
-rule "Ask about song's lenght"
-	salience 10
+rule "What rod do you want to use?"
+	salience 5
 	when
-		Fact(name("year"))
+		Fact(name("profession"), value("druid"))
+	then
+		Communication.askQuestion("rod_type");
+end
+
+rule "What level interval do you have?"
+	salience 1
+	when
+		Fact(name("profession"))
 	then
 		Communication.askQuestion("level");
 end
 
-rule "Ask if song should have up to 500 notes"
+rule "Into what place would you like to go?"
+	salience 2
+	when
+		Fact(name("profession"))
+		Fact(name("level"))
+	then
+		Communication.askQuestion("place");
+end
+
+rule "Would you attack an animal?"
+	salience 2
+	when
+		Fact(name("profession"))
+		Fact(name("level"))
+	then
+		Communication.askQuestion("animal_killer");
+end
+
+rule "Would you attack a person?"
+	salience 2
+	when
+		Fact(name("profession"))
+		Fact(name("level"))
+	then
+		Communication.askQuestion("person_killer");
+end
+
+rule "Are you scared of insects?"
 	salience 1
 	when
-		(or
-			Fact(name("difficulty"), value("easy"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not(exists Fact(name("about800notes")))
-		not(exists Fact(name("over1000notes")))
+		Fact(name("profession"))
+		Fact(name("level"))
 	then
-		Communication.askQuestion("below500notes");
+		Communication.askQuestion("insect_killer");
 end
 
-rule "Ask if song should have about 800 notes"
+rule "Are you scared of rats?"
 	salience 1
 	when
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("hardcores"), value(true))
-		not(exists Fact(name("over1000notes")))
-		not(exists Fact(name("below500notes")))
+		Fact(name("animal_killer"), value(false))
+		Fact(name("level"))
 	then
-		Communication.askQuestion("about800notes");
+		Communication.askQuestion("rat_fear");
 end
 
-rule "Ask if song should have over 1000 notes"
+rule "Do you like horrors?"
 	salience 1
 	when
-		(or
-			Fact(name("difficulty"), value("hard"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not(exists Fact(name("about800notes")))
-		not(exists Fact(name("below500notes")))
+		Fact(name("profession"))
+		Fact(name("level"))
 	then
-		Communication.askQuestion("over1000notes");
+		Communication.askQuestion("horror_like");
 end
 
-rule "Ask if user want a lame song"
+rule "Do you want to be like a Witcher?"
 	salience 1
 	when
-		Fact(name("difficulty"), value("easy"))
+		Fact(name("profession"))
+		Fact(name("level"))
 	then
-		Communication.askQuestion("lame_song");
+		Communication.askQuestion("witcher_wannabe");
 end
-
-rule "Ask if user want song without any solo"
-	salience 1
-	when
-		not Fact(name("difficulty"), value("hard"))
-		not Fact(name("severe_solos"), value(true))
-	then
-		Communication.askQuestion("without_solo");
-end
-
-rule "Ask if user like alternative rock"
-	salience 2
-	when
-	(or
-		Fact(name("lame_song"), value(true))
-		Fact(name("difficulty"), value("hard"))
-		Fact(name("difficulty"), value("no_care"))
-	)
-	not Fact(name("year"), value("knight"))
-	then
-		Communication.askQuestion("like_alternative_rock");
-end
-
-rule "Ask if user likes indie rock"
-	salience 2
-	when
-		Fact(name("lame_song"), value(true))
-		Fact(name("without_solo"), value(false))
-		Fact(name("below500notes"), value(false))
-	then
-		Communication.askQuestion("like_indie_rock");
-end
-
-rule "Ask if user like glam metal"
-	salience 2
-	when
-		(or
-			Fact(name("difficulty"), value("easy")) 
-			Fact(name("difficulty"), value("no_care"))
-		)
-		Fact(name("without_solo"), value(false))
-		Fact(name("level"), value("short"))
-	then
-		Communication.askQuestion("like_glam_metal");
-end
-
-rule "Ask about hardcores"
-	salience 1
-	when
-		not Fact(name("about800notes"), value(true))
-		(or
-			Fact(name("difficulty"), value("hard"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-	then
-		Communication.askQuestion("hardcores");
-end
-
-rule "Ask if user want severe, pronounced solos"
-	salience 2
-	when
-		Fact(name("hardcores"), value(true))
-		not Fact(name("without_solo"), value(true))
-	then
-		Communication.askQuestion("severe_solos");
-end
-
-rule "Ask if user likes heavy metal"
-	salience 2
-	when
-		(or
-			Fact(name("hardcores"), value(true))
-			(and
-				Fact(name("difficulty"), value("easy"))
-				Fact(name("lame_song"), value(false))
-				Fact(name("below500notes"), value(false))
-			)
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("hard"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("like_hard_rock"), value(true))
-		not Fact(name("like_heavy_metal"))
-	then
-		Communication.askQuestion("like_heavy_metal");
-end
-
-rule "Ask if user likes hard rock"
-	salience 2
-	when
-		(or
-			Fact(name("difficulty"), value("hard"))
-			(and
-				Fact(name("difficulty"), value("easy"))
-				Fact(name("lame_song"), value(false))
-				Fact(name("below500notes"), value(false))
-			)
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("like_heavy_metal"), value(true))
-	then
-		Communication.askQuestion("like_hard_rock");
-end
-
-rule "Ask if user like Dragonforce"
-	salience 2
-	when
-		Fact(name("hardcores"), value(true))
-		(or
-			Fact(name("year"), value("druid"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("over1000notes"), value(false))
-		not Fact(name("level"), value("short"))
-	then
-		Communication.askQuestion("dragonforce");
-end
-//18

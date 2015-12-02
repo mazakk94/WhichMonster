@@ -1,605 +1,3068 @@
 package rules
 
+import com.sample.DroolsTest.*;
 import com.java_layer.*;
 
-rule "When you were young"
+rule "Penguin"
 	salience 1000
 	when
-		Fact(name("like_alternative_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("lame_song"), value(true))
-		not Fact(name("without_solo"), value(false))
-		not Fact(name("below500notes"), value(true))
-		(or
-			Fact(name("year"), value("sorc"))
-			Fact(name("year"), value("druid"))
-		) 
-		not Fact(name("when_you_were_young"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("penguin"));
 	then
-		Communication.askQuestion("when_you_were_young");
-end
-
-rule "I love rock and roll"
+		Communication.askQuestion("penguin");
+	end
+rule "Skunk"
 	salience 1000
 	when
-		not Fact(name("level"), value("long"))
-		Fact(name("lame_song"), value(true))
-		Fact(name("without_solo"), value(true))
-		Fact(name("below500notes"), value(true))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("i_love_rock_and_roll"));
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("skunk"));
 	then
-		Communication.askQuestion("i_love_rock_and_roll");
-end
-
-rule "Slow ride"
+		Communication.askQuestion("skunk");
+	end
+rule "Badger"
 	salience 1000
 	when
-		not Fact(name("level"), value("long"))
-		Fact(name("lame_song"), value(true))
-		Fact(name("without_solo"), value(true))
-		not Fact(name("below500notes"), value(true))
-		(or
-			Fact(name("year"), value("druid"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("slow_ride"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("badger"));
 	then
-		Communication.askQuestion("slow_ride");
-end
-
-rule "Iron Man"
+		Communication.askQuestion("badger");
+	end
+rule "Rat"
 	salience 1000
 	when
-		not Fact(name("level"), value("long"))
-		Fact(name("lame_song"), value(true))
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("below500notes"), value(true))
-		(or
-			Fact(name("year"), value("sorc"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("iron_man"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("rat_fear"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("rat"));
 	then
-		Communication.askQuestion("iron_man");
-end
-
-rule "Take Me Out"
+		Communication.askQuestion("rat");
+	end
+rule "Bat"
 	salience 1000
 	when
-		Fact(name("like_indie_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("lame_song"), value(true))
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("below500notes"), value(true))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("take_me_out"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("bat"));
 	then
-		Communication.askQuestion("take_me_out");
-end
-
-rule "Cherry Pie"
+		Communication.askQuestion("bat");
+	end
+rule "Cave_Rat"
 	salience 1000
 	when
-		Fact(name("like_glam_metal"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("lame_song"), value(true))
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("below500notes"), value(false))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("cherry_pie"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("rat_fear"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("cave_rat"));
 	then
-		Communication.askQuestion("cherry_pie");
-end
-
-rule "Talk Dirty to Me"
+		Communication.askQuestion("cave_rat");
+	end
+rule "Snake"
 	salience 1000
 	when
-		Fact(name("like_glam_metal"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("difficulty"), value("no_care"))
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("below500notes"), value(true))
-		(or
-			Fact(name("year"), value("sorc"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("talk_dirty_to_me"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("snake"));
 	then
-		Communication.askQuestion("talk_dirty_to_me");
-end
-
-rule "Fly on The Wall"
+		Communication.askQuestion("snake");
+	end
+rule "Spider"
 	salience 1000
 	when
-		Fact(name("level"), value("short"))
-		(or
-			Fact(name("difficulty"), value("no_care"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		Fact(name("without_solo"), value(false))
-		not Fact(name("below500notes"), value(false))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("fly_on_the_wall"));
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("spider"));
 	then
-		Communication.askQuestion("fly_on_the_wall");
-end
-
-rule "Carry on Wayward Son"
+		Communication.askQuestion("spider");
+	end
+rule "Bug"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		Fact(name("level"), value("long"))
-		Fact(name("difficulty"), value("medium"))
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("below500notes"), value(true))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("carry_on_wayward_son"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("bug"));
 	then
-		Communication.askQuestion("carry_on_wayward_son");
-end 
-
-rule "Through the Fire and Flames"
+		Communication.askQuestion("bug");
+	end
+rule "Wolf"
 	salience 1000
 	when
-		not Fact(name("level"), value("short"))
-		Fact(name("dragonforce"), value(true))
-		not Fact(name("severe_solo"), value(false))
-		not Fact(name("over1000notes"), value(false))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("through_the_fire_and_flames"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("wolf"));
 	then
-		Communication.askQuestion("through_the_fire_and_flames");
-end
-
-rule "Fury of the Storm"
+		Communication.askQuestion("wolf");
+	end
+rule "Frog"
 	salience 1000
 	when
-		not Fact(name("level"), value("short"))
-		Fact(name("dragonforce"), value(true))
-		not Fact(name("severe_solo"), value(false))
-		not Fact(name("over1000notes"), value(false))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		
-		Fact(name("through_the_fire_and_flames"), value(false))
-		not Fact(name("fury_of_the_storm"));
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("frog"));
 	then
-		Communication.askQuestion("fury_of_the_storm");
-end
-
-rule "The Number of The Beast"
+		Communication.askQuestion("frog");
+	end
+rule "Hyaena"
 	salience 1000
 	when
-		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("hardcores"), value(true))
-		not Fact(name("severe_solos"), value(true))
-		not Fact(name("over1000notes"), value(false))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("the_number_of_the_beast"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("hyaena"));
 	then
-		Communication.askQuestion("the_number_of_the_beast");
-end 
-
-rule "Seek and Destroy"
+		Communication.askQuestion("hyaena");
+	end
+rule "Island_Troll"
 	salience 1000
 	when
-		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("level"), value("short"))
-		Fact(name("hardcores"), value(true))
-		not Fact(name("severe_solos"), value(false))
-		not Fact(name("over1000notes"), value(false))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("seek_and_destroy"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("island_troll"));
 	then
-		Communication.askQuestion("seek_and_destroy");
-end
-
-rule "One"
+		Communication.askQuestion("island_troll");
+	end
+rule "Spit_Nettle"
 	salience 1000
 	when
-		Fact(name("like_heavy_metal"), value(true))
-		Fact(name("level"), value("long"))
-		Fact(name("hardcores"), value(true))
-		not Fact(name("severe_solos"), value(false))
-		not Fact(name("over1000notes"), value(false))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("one"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("spit_nettle"));
 	then
-		Communication.askQuestion("one");
-end
-
-rule "Cliffs Of Dover"
+		Communication.askQuestion("spit_nettle");
+	end
+rule "Troll"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("hardcores"), value(true))
-		Fact(name("severe_solos"), value(true))
-		not Fact(name("over1000notes"), value(false))
-		(or
-			Fact(name("year"), value("sorc"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("cliffs_of_dover"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("troll"));
 	then
-		Communication.askQuestion("cliffs_of_dover");
-end
-
-rule "Free Bird"
+		Communication.askQuestion("troll");
+	end
+rule "Winter_Wolf"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("short"))
-		Fact(name("hardcores"), value(true))
-		not Fact(name("severe_solos"), value(false))
-		not Fact(name("over1000notes"), value(false))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("free_bird"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("winter_wolf"));
 	then
-		Communication.askQuestion("free_bird");
-end
-
-rule "Welcome to the Jungle"
+		Communication.askQuestion("winter_wolf");
+	end
+rule "Poison_Spider"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("hardcores"), value(true))
-		Fact(name("severe_solos"), value(false))
-		not Fact(name("over1000notes"), value(true))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("welcome_to_the_jungle"));
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("poison_spider"));
 	then
-		Communication.askQuestion("welcome_to_the_jungle");
-end
-
-rule "Electric Eye"
+		Communication.askQuestion("poison_spider");
+	end
+rule "Bear"
 	salience 1000
 	when
-		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("level"), value("long"))
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		Fact(name("without_solo"), value(false))
-		not Fact(name("about800notes"), value(true))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("electric_eye"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("bear"));
 	then
-		Communication.askQuestion("electric_eye");
-end
-
-rule "Holy Diver"
+		Communication.askQuestion("bear");
+	end
+rule "Frost_Troll"
 	salience 1000
 	when
-		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("level"), value("short"))
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("without_solo"), value(true))
-		Fact(name("about800notes"), value(true))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("holy_diver"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("frost_troll"));
 	then
-		Communication.askQuestion("holy_diver");
-end
-
-rule "No One Like You"
+		Communication.askQuestion("frost_troll");
+	end
+rule "Wasp"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		Fact(name("without_solo"), value(false))
-		not Fact(name("about800notes"), value(true))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("no_one_like_you"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("wasp"));
 	then
-		Communication.askQuestion("no_one_like_you");
-end
-
-rule "Can't You Hear Me Knocking"
+		Communication.askQuestion("wasp");
+	end
+rule "Goblin"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("without_solo"), value(true))
-		Fact(name("about800notes"), value(true))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("cant_you_hear_me_knocking"));
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("goblin"));
 	then
-		Communication.askQuestion("cant_you_hear_me_knocking");
-end
-
-rule "Sweet Child O' Mine"
+		Communication.askQuestion("goblin");
+	end
+rule "Orc"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("short"))
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("about800notes"), value(false))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("sweet_child_o_mine"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("orc"));
 	then
-		Communication.askQuestion("sweet_child_o_mine");
-end
-
-rule "Them Bones"
+		Communication.askQuestion("orc");
+	end
+rule "Swamp_Troll"
 	salience 1000
 	when
-		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("level"), value("long"))
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("about800notes"), value(true))
-		(or
-			Fact(name("year"), value("sorc"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("them_bones"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("swamp_troll"));
 	then
-		Communication.askQuestion("them_bones");
-end
-
-rule "Paranoid"
+		Communication.askQuestion("swamp_troll");
+	end
+rule "Polar_Bear"
 	salience 1000
 	when
-		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("level"), value("long"))
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		Fact(name("without_solo"), value(true))
-		not Fact(name("about800notes"), value(true))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("paranoid"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("polar_bear"));
 	then
-		Communication.askQuestion("paranoid");
-end
-
-rule "Woman"
+		Communication.askQuestion("polar_bear");
+	end
+rule "Cobra"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("about800notes"), value(true))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("woman"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("cobra"));
 	then
-		Communication.askQuestion("woman");
-end
-
-rule "Smoke On The Water"
+		Communication.askQuestion("cobra");
+	end
+rule "Crab"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("short"))
-		(or
-			Fact(name("difficulty"), value("no_care"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("below500notes"), value(false))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("smoke_on_the_water"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("crab"));
 	then
-		Communication.askQuestion("smoke_on_the_water");
-end
-
-
-rule "Wrath Child"
+		Communication.askQuestion("crab");
+	end
+rule "Dworc_Venomsniper"
 	salience 1000
 	when
-		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("hardcores"), value(false))
-		not Fact(name("severe_solos"), value(true))
-		not Fact(name("over1000notes"), value(true))
-		(or
-			Fact(name("year"), value("knight"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("wrath_child"));
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("dworc_venomsniper"));
 	then
-		Communication.askQuestion("wrath_child");
-end
-
-
-rule "Monkey Wrench"
+		Communication.askQuestion("dworc_venomsniper");
+	end
+rule "Lion"
 	salience 1000
 	when
-		Fact(name("like_alternative_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("hardcores"), value(false))
-		not Fact(name("severe_solos"), value(true))
-		not Fact(name("over1000notes"), value(false))
-		(or
-			Fact(name("year"), value("sorc"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("monkey_wrench"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("lion"));
 	then
-		Communication.askQuestion("monkey_wrench");
-end
-
-
-rule "The Unforgiven"
+		Communication.askQuestion("lion");
+	end
+rule "Centipede"
 	salience 1000
 	when
-		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("level"), value("short"))
-		Fact(name("hardcores"), value(false))
-		not Fact(name("severe_solos"), value(true))
-		not Fact(name("over1000notes"), value(true))
-		(or
-			Fact(name("year"), value("sorc"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("the_unforgiven"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("centipede"));
 	then
-		Communication.askQuestion("the_unforgiven");
-end
-
-
-rule "Suck My Kiss"
+		Communication.askQuestion("centipede");
+	end
+rule "Dworc_Fleshhunter"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		Fact(name("hardcores"), value(true))
-		not Fact(name("severe_solos"), value(true))
-		not Fact(name("over1000notes"), value(true))
-		(or
-			Fact(name("year"), value("sorc"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("suck_my_kiss"));
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("dworc_fleshhunter"));
 	then
-		Communication.askQuestion("suck_my_kiss");
-end
-
-//30 rules
-
-
-rule "Here It Goes Again"
+		Communication.askQuestion("dworc_fleshhunter");
+	end
+rule "Skeleton"
 	salience 1000
 	when
-		Fact(name("like_alternative_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		(or
-			Fact(name("difficulty"), value("no_care"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("without_solo"), value(true))
-		not Fact(name("below500notes"), value(true))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("here_it_goes_again"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("skeleton"));
 	then
-		Communication.askQuestion("here_it_goes_again");
-end
-
-
-rule "Tribute"
+		Communication.askQuestion("skeleton");
+	end
+rule "Orc_Spearman"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("long"))
-		(or
-			Fact(name("difficulty"), value("medium"))
-			Fact(name("difficulty"), value("no_care"))
-		)
-		not Fact(name("without_solo"), value(false))
-		not Fact(name("below500notes"), value(true))
-		(or
-			Fact(name("year"), value("paladin"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("tribute"));
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("orc_spearman"));
 	then
-		Communication.askQuestion("tribute");
-end
-
-
-rule "Thunderstruck"
+		Communication.askQuestion("orc_spearman");
+	end
+rule "Crocodile"
 	salience 1000
 	when
-		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("level"), value("short"))
-		not Fact(name("hardcores"), value(true))	
-		not Fact(name("without_solo"), value(false))
-		not Fact(name("over1000notes"), value(true))
-		(or
-			Fact(name("year"), value("sorc"))
-			Fact(name("year"), value("no_care"))
-		)
-		not Fact(name("thunderstruck"));
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("crocodile"));
 	then
-		Communication.askQuestion("thunderstruck");
-end
+		Communication.askQuestion("crocodile");
+	end
+rule "Rotworm"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("rotworm"));
+	then
+		Communication.askQuestion("rotworm");
+	end
+rule "Tiger"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("tiger"));
+	then
+		Communication.askQuestion("tiger");
+	end
+rule "Elf"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("elf"));
+	then
+		Communication.askQuestion("elf");
+	end
+rule "Larva"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("larva"));
+	then
+		Communication.askQuestion("larva");
+	end
+rule "Dwarf"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("dwarf"));
+	then
+		Communication.askQuestion("dwarf");
+	end
+rule "Scorpion"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("scorpion"));
+	then
+		Communication.askQuestion("scorpion");
+	end
+rule "Smuggler"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("smuggler"));
+	then
+		Communication.askQuestion("smuggler");
+	end
+rule "Minotaur"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("minotaur"));
+	then
+		Communication.askQuestion("minotaur");
+	end
+rule "Orc_Warrior"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("orc_warrior"));
+	then
+		Communication.askQuestion("orc_warrior");
+	end
+rule "Dworc_Voodoomaster"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("dworc_voodoomaster"));
+	then
+		Communication.askQuestion("dworc_voodoomaster");
+	end
+rule "War_Wolf"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("war_wolf"));
+	then
+		Communication.askQuestion("war_wolf");
+	end
+rule "Amazon"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("amazon"));
+	then
+		Communication.askQuestion("amazon");
+	end
+rule "Nomad"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("nomad"));
+	then
+		Communication.askQuestion("nomad");
+	end
+rule "Toad"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("toad"));
+	then
+		Communication.askQuestion("toad");
+	end
+rule "Wild_Warrior"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("wild_warrior"));
+	then
+		Communication.askQuestion("wild_warrior");
+	end
+rule "Bandit"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("bandit"));
+	then
+		Communication.askQuestion("bandit");
+	end
+rule "Minotaur_Archer"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("minotaur_archer"));
+	then
+		Communication.askQuestion("minotaur_archer");
+	end
+rule "Carrion_Worm"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("carrion_worm"));
+	then
+		Communication.askQuestion("carrion_worm");
+	end
+rule "Dwarf_Soldier"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("dwarf_soldier"));
+	then
+		Communication.askQuestion("dwarf_soldier");
+	end
+rule "Elf_Scout"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("elf_scout"));
+	then
+		Communication.askQuestion("elf_scout");
+	end
+rule "Ghoul"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("ghoul"));
+	then
+		Communication.askQuestion("ghoul");
+	end
+rule "Pirate_Skeleton"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("pirate_skeleton"));
+	then
+		Communication.askQuestion("pirate_skeleton");
+	end
+rule "Valkyrie"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("valkyrie"));
+	then
+		Communication.askQuestion("valkyrie");
+	end
+rule "Gazer"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("gazer"));
+	then
+		Communication.askQuestion("gazer");
+	end
+rule "Stalker"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("stalker"));
+	then
+		Communication.askQuestion("stalker");
+	end
+rule "Tortoise"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("tortoise"));
+	then
+		Communication.askQuestion("tortoise");
+	end
+rule "Novice_of_the_Cult"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("novice_of_the_cult"));
+	then
+		Communication.askQuestion("novice_of_the_cult");
+	end
+rule "Quara_Mantassin_Scout"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("rod_type"), value("ice"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("quara_mantassin_scout"));
+	then
+		Communication.askQuestion("quara_mantassin_scout");
+	end
+rule "Assassin"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("assassin"));
+	then
+		Communication.askQuestion("assassin");
+	end
+rule "Sibang"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("sibang"));
+	then
+		Communication.askQuestion("sibang");
+	end
+rule "Lizard_Sentinel"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("lizard_sentinel"));
+	then
+		Communication.askQuestion("lizard_sentinel");
+	end
+rule "Orc_Rider"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("orc_rider"));
+	then
+		Communication.askQuestion("orc_rider");
+	end
+rule "Orc_Shaman"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("orc_shaman"));
+	then
+		Communication.askQuestion("orc_shaman");
+	end
+rule "Kongra"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("kongra"));
+	then
+		Communication.askQuestion("kongra");
+	end
+rule "Dire_Penguin"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("dire_penguin"));
+	then
+		Communication.askQuestion("dire_penguin");
+	end
+rule "Ghost"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("ghost"));
+	then
+		Communication.askQuestion("ghost");
+	end
+rule "Scarab"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("scarab"));
+	then
+		Communication.askQuestion("scarab");
+	end
+rule "Tarantula"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("tarantula"));
+	then
+		Communication.askQuestion("tarantula");
+	end
+rule "Witch"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("witch"));
+	then
+		Communication.askQuestion("witch");
+	end
+rule "Pirate_Marauder"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("jeden"))
+	not Fact(name("pirate_marauder"));
+	then
+		Communication.askQuestion("pirate_marauder");
+	end
+rule "Dark_Monk"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("dark_monk"));
+	then
+		Communication.askQuestion("dark_monk");
+	end
+rule "Fire_Devil"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("fire_devil"));
+	then
+		Communication.askQuestion("fire_devil");
+	end
+rule "Merlkin"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("merlkin"));
+	then
+		Communication.askQuestion("merlkin");
+	end
+rule "Carniphila"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("carniphila"));
+	then
+		Communication.askQuestion("carniphila");
+	end
+rule "Cyclops"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("cyclops"));
+	then
+		Communication.askQuestion("cyclops");
+	end
+rule "Frost_Giant"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("frost_giant"));
+	then
+		Communication.askQuestion("frost_giant");
+	end
+rule "Frost_Giantess"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("frost_giantess"));
+	then
+		Communication.askQuestion("frost_giantess");
+	end
+rule "Gargoyle"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("gargoyle"));
+	then
+		Communication.askQuestion("gargoyle");
+	end
+rule "Hunter"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("hunter"));
+	then
+		Communication.askQuestion("hunter");
+	end
+rule "Minotaur_Mage"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("minotaur_mage"));
+	then
+		Communication.askQuestion("minotaur_mage");
+	end
+rule "Mummy"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("mummy"));
+	then
+		Communication.askQuestion("mummy");
+	end
+rule "Terror_Bird"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("terror_bird"));
+	then
+		Communication.askQuestion("terror_bird");
+	end
+rule "Thornback_Tortoise"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("thornback_tortoise"));
+	then
+		Communication.askQuestion("thornback_tortoise");
+	end
+rule "Lizard_Templar"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("lizard_templar"));
+	then
+		Communication.askQuestion("lizard_templar");
+	end
+rule "Blood_Crab"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("blood_crab"));
+	then
+		Communication.askQuestion("blood_crab");
+	end
+rule "Elephant"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("elephant"));
+	then
+		Communication.askQuestion("elephant");
+	end
+rule "Mammoth"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("mammoth"));
+	then
+		Communication.askQuestion("mammoth");
+	end
+rule "Minotaur_Guard"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("minotaur_guard"));
+	then
+		Communication.askQuestion("minotaur_guard");
+	end
+rule "Slime"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("slime"));
+	then
+		Communication.askQuestion("slime");
+	end
+rule "Stone_Golem"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("stone_golem"));
+	then
+		Communication.askQuestion("stone_golem");
+	end
+rule "Dwarf_Guard"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("dwarf_guard"));
+	then
+		Communication.askQuestion("dwarf_guard");
+	end
+rule "Bonelord"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("bonelord"));
+	then
+		Communication.askQuestion("bonelord");
+	end
+rule "Elf_Arcanist"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("elf_arcanist"));
+	then
+		Communication.askQuestion("elf_arcanist");
+	end
+rule "Pirate_Cutthroat"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("pirate_cutthroat"));
+	then
+		Communication.askQuestion("pirate_cutthroat");
+	end
+rule "Barbarian_Bloodwalker"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("barbarian_bloodwalker"));
+	then
+		Communication.askQuestion("barbarian_bloodwalker");
+	end
+rule "Crypt_Shambler"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("crypt_shambler"));
+	then
+		Communication.askQuestion("crypt_shambler");
+	end
+rule "Orc_Berserker"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("orc_berserker"));
+	then
+		Communication.askQuestion("orc_berserker");
+	end
+rule "Monk"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("monk"));
+	then
+		Communication.askQuestion("monk");
+	end
+rule "Quara_Constrictor_Scout"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("quara_constrictor_scout"));
+	then
+		Communication.askQuestion("quara_constrictor_scout");
+	end
+rule "Lizard_Snakecharmer"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("lizard_snakecharmer"));
+	then
+		Communication.askQuestion("lizard_snakecharmer");
+	end
+rule "Blue_Djinn"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("blue_djinn"));
+	then
+		Communication.askQuestion("blue_djinn");
+	end
+rule "Green_Djinn"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("green_djinn"));
+	then
+		Communication.askQuestion("green_djinn");
+	end
+rule "Fire_Elemental"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("fire_elemental"));
+	then
+		Communication.askQuestion("fire_elemental");
+	end
+rule "Demon_Skeleton"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("demon_skeleton"));
+	then
+		Communication.askQuestion("demon_skeleton");
+	end
+rule "Pirate_Buccaneer"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("pirate_buccaneer"));
+	then
+		Communication.askQuestion("pirate_buccaneer");
+	end
+rule "Pirate_Ghost"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("pirate_ghost"));
+	then
+		Communication.askQuestion("pirate_ghost");
+	end
+rule "Quara_Constrictor"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("quara_constrictor"));
+	then
+		Communication.askQuestion("quara_constrictor");
+	end
+rule "Dwarf_Geomancer"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("dwarf_geomancer"));
+	then
+		Communication.askQuestion("dwarf_geomancer");
+	end
+rule "Orc_Leader"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("orc_leader"));
+	then
+		Communication.askQuestion("orc_leader");
+	end
+rule "Elder_Bonelord"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("elder_bonelord"));
+	then
+		Communication.askQuestion("elder_bonelord");
+	end
+rule "Ice_Golem"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("ice_golem"));
+	then
+		Communication.askQuestion("ice_golem");
+	end
+rule "Acolyte_of_the_Cult"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("dwa"))
+	not Fact(name("acolyte_of_the_cult"));
+	then
+		Communication.askQuestion("acolyte_of_the_cult");
+	end
+rule "Vampire"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("vampire"));
+	then
+		Communication.askQuestion("vampire");
+	end
+rule "Efreet"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("efreet"));
+	then
+		Communication.askQuestion("efreet");
+	end
+rule "Marid"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("marid"));
+	then
+		Communication.askQuestion("marid");
+	end
+rule "Pirate_Corsair"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("pirate_corsair"));
+	then
+		Communication.askQuestion("pirate_corsair");
+	end
+rule "Adept_of_the_Cult"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("adept_of_the_cult"));
+	then
+		Communication.askQuestion("adept_of_the_cult");
+	end
+rule "Quara_Predator_Scout"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("quara_predator_scout"));
+	then
+		Communication.askQuestion("quara_predator_scout");
+	end
+rule "Priestess"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("priestess"));
+	then
+		Communication.askQuestion("priestess");
+	end
+rule "Enlightenergiad_of_the_Cult"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("enlightenergiad_of_the_cult"));
+	then
+		Communication.askQuestion("enlightenergiad_of_the_cult");
+	end
+rule "Bonebeast"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("bonebeast"));
+	then
+		Communication.askQuestion("bonebeast");
+	end
+rule "Ice_Witch"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("ice_witch"));
+	then
+		Communication.askQuestion("ice_witch");
+	end
+rule "Nekromancer"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("nekromancer"));
+	then
+		Communication.askQuestion("nekromancer");
+	end
+rule "Quara_Pincher_Scout"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("quara_pincher_scout"));
+	then
+		Communication.askQuestion("quara_pincher_scout");
+	end
+rule "Water_Elemental"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("water_elemental"));
+	then
+		Communication.askQuestion("water_elemental");
+	end
+rule "Orc_Warlord"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("orc_warlord"));
+	then
+		Communication.askQuestion("orc_warlord");
+	end
+rule "Dragon"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("dragon"));
+	then
+		Communication.askQuestion("dragon");
+	end
+rule "Ancient_Scarab"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("ancient_scarab"));
+	then
+		Communication.askQuestion("ancient_scarab");
+	end
+rule "Man_in_the_Cave"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("man_in_the_cave"));
+	then
+		Communication.askQuestion("man_in_the_cave");
+	end
+rule "Massive_Water_Elemental"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("massive_water_elemental"));
+	then
+		Communication.askQuestion("massive_water_elemental");
+	end
+rule "Quara_Hydromancer"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("rod_type"), value("ice"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("quara_hydromancer"));
+	then
+		Communication.askQuestion("quara_hydromancer");
+	end
+rule "Quara_Hydromancer_Scout"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("rod_type"), value("ice"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("quara_hydromancer_scout"));
+	then
+		Communication.askQuestion("quara_hydromancer_scout");
+	end
+rule "Banshee"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("banshee"));
+	then
+		Communication.askQuestion("banshee");
+	end
+rule "Crystal_Spider"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("crystal_spider"));
+	then
+		Communication.askQuestion("crystal_spider");
+	end
+rule "Giant_Spider"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("insect_killer"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("giant_spider"));
+	then
+		Communication.askQuestion("giant_spider");
+	end
+rule "Braindeath"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("braindeath"));
+	then
+		Communication.askQuestion("braindeath");
+	end
+rule "Hero"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	(or
+	Fact(name("profession"), value("sorc"))
+	Fact(name("profession"), value("druid"))
+	)
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("hero"));
+	then
+		Communication.askQuestion("hero");
+	end
+rule "Quara_Pincher"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("quara_pincher"));
+	then
+		Communication.askQuestion("quara_pincher");
+	end
+rule "Black_Knight"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	not Fact(name("rod_type"), value("earth"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("black_knight"));
+	then
+		Communication.askQuestion("black_knight");
+	end
+rule "Quara_Predator"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("trzy"))
+	not Fact(name("quara_predator"));
+	then
+		Communication.askQuestion("quara_predator");
+	end
+rule "Dragon_Lord"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("dragon_lord"));
+	then
+		Communication.askQuestion("dragon_lord");
+	end
+rule "Frost_Dragon"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("frost_dragon"));
+	then
+		Communication.askQuestion("frost_dragon");
+	end
+rule "Hydra"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("hydra"));
+	then
+		Communication.askQuestion("hydra");
+	end
+rule "Spectre"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("spectre"));
+	then
+		Communication.askQuestion("spectre");
+	end
+rule "Nightmare"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("nightmare"));
+	then
+		Communication.askQuestion("nightmare");
+	end
+rule "Behemoth"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("behemoth"));
+	then
+		Communication.askQuestion("behemoth");
+	end
+rule "Destroyer"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("destroyer"));
+	then
+		Communication.askQuestion("destroyer");
+	end
+rule "Diabolic_Imp"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("diabolic_imp"));
+	then
+		Communication.askQuestion("diabolic_imp");
+	end
+rule "Serpent_Spawn"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("animal_killer"), value(false))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("serpent_spawn"));
+	then
+		Communication.askQuestion("serpent_spawn");
+	end
+rule "Betrayed_Wraith"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("betrayed_wraith"));
+	then
+		Communication.askQuestion("betrayed_wraith");
+	end
+rule "Defiler"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("defiler"));
+	then
+		Communication.askQuestion("defiler");
+	end
+rule "Hellfire_Fighter"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("hellfire_fighter"));
+	then
+		Communication.askQuestion("hellfire_fighter");
+	end
+rule "Lost_Soul"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("lost_soul"));
+	then
+		Communication.askQuestion("lost_soul");
+	end
+rule "Warlock"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("person_killer"), value(false))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("warlock"));
+	then
+		Communication.askQuestion("warlock");
+	end
+rule "Phantasm"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("phantasm"));
+	then
+		Communication.askQuestion("phantasm");
+	end
+rule "Fury"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("fury"));
+	then
+		Communication.askQuestion("fury");
+	end
+rule "Plaguesmith"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("plaguesmith"));
+	then
+		Communication.askQuestion("plaguesmith");
+	end
+rule "Dark_Torturer"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("desert"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("dark_torturer"));
+	then
+		Communication.askQuestion("dark_torturer");
+	end
+rule "Hand_of_Cursed_Fate"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	(or
+	Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("knight"))
+	)
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("hand_of_cursed_fate"));
+	then
+		Communication.askQuestion("hand_of_cursed_fate");
+	end
+rule "Blinghtwalker"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("horror_like"), value(true))
+	(or
+		not Fact(name("rod_type"), value("death"))
+		not Fact(name("wand_type"), value("death"))
+	)
+	Fact(name("profession"), value("paladin"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("blinghtwalker"));
+	then
+		Communication.askQuestion("blinghtwalker");
+	end
+rule "Demon"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("sorc"))
+		Fact(name("profession"), value("druid"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("fire"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("demon"));
+	then
+		Communication.askQuestion("demon");
+	end
+rule "Hellhound"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	(or
+		not Fact(name("profession"), value("knight"))
+		not Fact(name("profession"), value("paladin"))
+	)
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("water"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("hellhound"));
+	then
+		Communication.askQuestion("hellhound");
+	end
+rule "Undead_Dragon"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("profession"), value("paladin"))
+	Fact(name("profession"), value("druid"))
+	Fact(name("place"), value("forest"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("undead_dragon"));
+	then
+		Communication.askQuestion("undead_dragon");
+	end
+rule "Juggernaut"
+	salience 1000
+	when
+	(or
+		Fact(name("profession"), value("paladin"))
+		Fact(name("profession"), value("knight"))
+	)
+	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("wand_type"), value("energy"))
+	Fact(name("profession"), value("sorc"))
+	Fact(name("place"), value("dungeon"))
+	Fact(name("level"), value("cztery"))
+	not Fact(name("juggernaut"));
+	then
+		Communication.askQuestion("juggernaut");
+	end
