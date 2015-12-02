@@ -1,0 +1,605 @@
+package rules
+
+import com.java_layer.*;
+
+rule "When you were young"
+	salience 1000
+	when
+		Fact(name("like_alternative_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("lame_song"), value(true))
+		not Fact(name("without_solo"), value(false))
+		not Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("sorc"))
+			Fact(name("year"), value("druid"))
+		) 
+		not Fact(name("when_you_were_young"));
+	then
+		Communication.askQuestion("when_you_were_young");
+end
+
+rule "I love rock and roll"
+	salience 1000
+	when
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("lame_song"), value(true))
+		Fact(name("without_solo"), value(true))
+		Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("i_love_rock_and_roll"));
+	then
+		Communication.askQuestion("i_love_rock_and_roll");
+end
+
+rule "Slow ride"
+	salience 1000
+	when
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("lame_song"), value(true))
+		Fact(name("without_solo"), value(true))
+		not Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("druid"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("slow_ride"));
+	then
+		Communication.askQuestion("slow_ride");
+end
+
+rule "Iron Man"
+	salience 1000
+	when
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("lame_song"), value(true))
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("sorc"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("iron_man"));
+	then
+		Communication.askQuestion("iron_man");
+end
+
+rule "Take Me Out"
+	salience 1000
+	when
+		Fact(name("like_indie_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("lame_song"), value(true))
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("take_me_out"));
+	then
+		Communication.askQuestion("take_me_out");
+end
+
+rule "Cherry Pie"
+	salience 1000
+	when
+		Fact(name("like_glam_metal"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("lame_song"), value(true))
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("below500notes"), value(false))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("cherry_pie"));
+	then
+		Communication.askQuestion("cherry_pie");
+end
+
+rule "Talk Dirty to Me"
+	salience 1000
+	when
+		Fact(name("like_glam_metal"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("difficulty"), value("no_care"))
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("sorc"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("talk_dirty_to_me"));
+	then
+		Communication.askQuestion("talk_dirty_to_me");
+end
+
+rule "Fly on The Wall"
+	salience 1000
+	when
+		Fact(name("song's_length"), value("short"))
+		(or
+			Fact(name("difficulty"), value("no_care"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		Fact(name("without_solo"), value(false))
+		not Fact(name("below500notes"), value(false))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("fly_on_the_wall"));
+	then
+		Communication.askQuestion("fly_on_the_wall");
+end
+
+rule "Carry on Wayward Son"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		Fact(name("song's_length"), value("long"))
+		Fact(name("difficulty"), value("medium"))
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("carry_on_wayward_son"));
+	then
+		Communication.askQuestion("carry_on_wayward_son");
+end 
+
+rule "Through the Fire and Flames"
+	salience 1000
+	when
+		not Fact(name("song's_length"), value("short"))
+		Fact(name("dragonforce"), value(true))
+		not Fact(name("severe_solo"), value(false))
+		not Fact(name("over1000notes"), value(false))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("through_the_fire_and_flames"));
+	then
+		Communication.askQuestion("through_the_fire_and_flames");
+end
+
+rule "Fury of the Storm"
+	salience 1000
+	when
+		not Fact(name("song's_length"), value("short"))
+		Fact(name("dragonforce"), value(true))
+		not Fact(name("severe_solo"), value(false))
+		not Fact(name("over1000notes"), value(false))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		
+		Fact(name("through_the_fire_and_flames"), value(false))
+		not Fact(name("fury_of_the_storm"));
+	then
+		Communication.askQuestion("fury_of_the_storm");
+end
+
+rule "The Number of The Beast"
+	salience 1000
+	when
+		Fact(name("like_heavy_metal"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("hardcores"), value(true))
+		not Fact(name("severe_solos"), value(true))
+		not Fact(name("over1000notes"), value(false))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("the_number_of_the_beast"));
+	then
+		Communication.askQuestion("the_number_of_the_beast");
+end 
+
+rule "Seek and Destroy"
+	salience 1000
+	when
+		Fact(name("like_heavy_metal"), value(true))
+		not Fact(name("song's_length"), value("short"))
+		Fact(name("hardcores"), value(true))
+		not Fact(name("severe_solos"), value(false))
+		not Fact(name("over1000notes"), value(false))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("seek_and_destroy"));
+	then
+		Communication.askQuestion("seek_and_destroy");
+end
+
+rule "One"
+	salience 1000
+	when
+		Fact(name("like_heavy_metal"), value(true))
+		Fact(name("song's_length"), value("long"))
+		Fact(name("hardcores"), value(true))
+		not Fact(name("severe_solos"), value(false))
+		not Fact(name("over1000notes"), value(false))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("one"));
+	then
+		Communication.askQuestion("one");
+end
+
+rule "Cliffs Of Dover"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("hardcores"), value(true))
+		Fact(name("severe_solos"), value(true))
+		not Fact(name("over1000notes"), value(false))
+		(or
+			Fact(name("year"), value("sorc"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("cliffs_of_dover"));
+	then
+		Communication.askQuestion("cliffs_of_dover");
+end
+
+rule "Free Bird"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("short"))
+		Fact(name("hardcores"), value(true))
+		not Fact(name("severe_solos"), value(false))
+		not Fact(name("over1000notes"), value(false))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("free_bird"));
+	then
+		Communication.askQuestion("free_bird");
+end
+
+rule "Welcome to the Jungle"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("hardcores"), value(true))
+		Fact(name("severe_solos"), value(false))
+		not Fact(name("over1000notes"), value(true))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("welcome_to_the_jungle"));
+	then
+		Communication.askQuestion("welcome_to_the_jungle");
+end
+
+rule "Electric Eye"
+	salience 1000
+	when
+		Fact(name("like_heavy_metal"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		(or
+			Fact(name("difficulty"), value("medium"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		Fact(name("without_solo"), value(false))
+		not Fact(name("about800notes"), value(true))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("electric_eye"));
+	then
+		Communication.askQuestion("electric_eye");
+end
+
+rule "Holy Diver"
+	salience 1000
+	when
+		Fact(name("like_heavy_metal"), value(true))
+		not Fact(name("song's_length"), value("short"))
+		(or
+			Fact(name("difficulty"), value("medium"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		not Fact(name("without_solo"), value(true))
+		Fact(name("about800notes"), value(true))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("holy_diver"));
+	then
+		Communication.askQuestion("holy_diver");
+end
+
+rule "No One Like You"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		(or
+			Fact(name("difficulty"), value("medium"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		Fact(name("without_solo"), value(false))
+		not Fact(name("about800notes"), value(true))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("no_one_like_you"));
+	then
+		Communication.askQuestion("no_one_like_you");
+end
+
+rule "Can't You Hear Me Knocking"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		(or
+			Fact(name("difficulty"), value("medium"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		not Fact(name("without_solo"), value(true))
+		Fact(name("about800notes"), value(true))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("cant_you_hear_me_knocking"));
+	then
+		Communication.askQuestion("cant_you_hear_me_knocking");
+end
+
+rule "Sweet Child O' Mine"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("short"))
+		(or
+			Fact(name("difficulty"), value("medium"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("about800notes"), value(false))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("sweet_child_o_mine"));
+	then
+		Communication.askQuestion("sweet_child_o_mine");
+end
+
+rule "Them Bones"
+	salience 1000
+	when
+		Fact(name("like_heavy_metal"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		(or
+			Fact(name("difficulty"), value("medium"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("about800notes"), value(true))
+		(or
+			Fact(name("year"), value("sorc"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("them_bones"));
+	then
+		Communication.askQuestion("them_bones");
+end
+
+rule "Paranoid"
+	salience 1000
+	when
+		Fact(name("like_heavy_metal"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		(or
+			Fact(name("difficulty"), value("medium"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		Fact(name("without_solo"), value(true))
+		not Fact(name("about800notes"), value(true))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("paranoid"));
+	then
+		Communication.askQuestion("paranoid");
+end
+
+rule "Woman"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		(or
+			Fact(name("difficulty"), value("medium"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("about800notes"), value(true))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("woman"));
+	then
+		Communication.askQuestion("woman");
+end
+
+rule "Smoke On The Water"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("short"))
+		(or
+			Fact(name("difficulty"), value("no_care"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("below500notes"), value(false))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("smoke_on_the_water"));
+	then
+		Communication.askQuestion("smoke_on_the_water");
+end
+
+
+rule "Wrath Child"
+	salience 1000
+	when
+		Fact(name("like_heavy_metal"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("hardcores"), value(false))
+		not Fact(name("severe_solos"), value(true))
+		not Fact(name("over1000notes"), value(true))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("wrath_child"));
+	then
+		Communication.askQuestion("wrath_child");
+end
+
+
+rule "Monkey Wrench"
+	salience 1000
+	when
+		Fact(name("like_alternative_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("hardcores"), value(false))
+		not Fact(name("severe_solos"), value(true))
+		not Fact(name("over1000notes"), value(false))
+		(or
+			Fact(name("year"), value("sorc"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("monkey_wrench"));
+	then
+		Communication.askQuestion("monkey_wrench");
+end
+
+
+rule "The Unforgiven"
+	salience 1000
+	when
+		Fact(name("like_heavy_metal"), value(true))
+		not Fact(name("song's_length"), value("short"))
+		Fact(name("hardcores"), value(false))
+		not Fact(name("severe_solos"), value(true))
+		not Fact(name("over1000notes"), value(true))
+		(or
+			Fact(name("year"), value("sorc"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("the_unforgiven"));
+	then
+		Communication.askQuestion("the_unforgiven");
+end
+
+
+rule "Suck My Kiss"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		Fact(name("hardcores"), value(true))
+		not Fact(name("severe_solos"), value(true))
+		not Fact(name("over1000notes"), value(true))
+		(or
+			Fact(name("year"), value("sorc"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("suck_my_kiss"));
+	then
+		Communication.askQuestion("suck_my_kiss");
+end
+
+//30 rules
+
+
+rule "Here It Goes Again"
+	salience 1000
+	when
+		Fact(name("like_alternative_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		(or
+			Fact(name("difficulty"), value("no_care"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		not Fact(name("without_solo"), value(true))
+		not Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("here_it_goes_again"));
+	then
+		Communication.askQuestion("here_it_goes_again");
+end
+
+
+rule "Tribute"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("long"))
+		(or
+			Fact(name("difficulty"), value("medium"))
+			Fact(name("difficulty"), value("no_care"))
+		)
+		not Fact(name("without_solo"), value(false))
+		not Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("paladin"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("tribute"));
+	then
+		Communication.askQuestion("tribute");
+end
+
+
+rule "Thunderstruck"
+	salience 1000
+	when
+		Fact(name("like_hard_rock"), value(true))
+		not Fact(name("song's_length"), value("short"))
+		not Fact(name("hardcores"), value(true))	
+		not Fact(name("without_solo"), value(false))
+		not Fact(name("over1000notes"), value(true))
+		(or
+			Fact(name("year"), value("sorc"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("thunderstruck"));
+	then
+		Communication.askQuestion("thunderstruck");
+end
