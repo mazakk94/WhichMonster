@@ -1,0 +1,93 @@
+package rules
+
+import com.java_layer.*;
+
+rule "Orc"
+	salience 1000
+	when
+		Fact(name("level"), value("jeden"))
+		Fact(name("rod_type"))
+		not Fact(name("rod_type"), value("death"))
+		
+	then
+		Communication.askQuestion("orc");
+end
+
+rule "Rat"
+	salience 1000
+	when
+		Fact(name("level"), value("jeden"))
+		Fact(name("animal_killer"), value(true))
+		Fact(name("rat_fear"), value(false))
+		Fact(name("wand_type"), value("fire"))
+	then
+		Communication.askQuestion("rat");
+end
+
+rule "I love rock and roll"
+	salience 1000
+	when
+		not Fact(name("level"), value("long"))
+		Fact(name("lame_song"), value(true))
+		Fact(name("without_solo"), value(true))
+		Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("knight"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("i_love_rock_and_roll"));
+	then
+		Communication.askQuestion("i_love_rock_and_roll");
+end
+
+rule "Slow ride"
+	salience 1000
+	when
+		not Fact(name("level"), value("long"))
+		Fact(name("lame_song"), value(true))
+		not Fact(name("below500notes"), value(true))
+		(or
+			Fact(name("year"), value("druid"))
+			Fact(name("year"), value("no_care"))
+		)
+		not Fact(name("slow_ride"));
+	then
+		Communication.askQuestion("slow_ride");
+end
+
+rule "Elephant"
+	salience 1000
+	when
+		not Fact(name("profession"), value("paladin"))
+		Fact(name("level"), value("dwa"))
+		Fact(name("place"), value("lasy"))
+	then
+		Communication.askQuestion("elephant");
+end
+
+
+
+rule "Rat"
+	salience 1000
+	when
+		not Fact(name("profession"), value("paladin"))
+		Fact(name("rat_fear"), value("false"))
+		Fact(name("level"), value("dwa"))
+		Fact(name("place"), value("lasy"))
+	then
+		Communication.askQuestion("elephant");
+end
+
+rule "Penguin"
+	salience 1000
+	when
+	(or
+		(not Fact(name("profession"), value("paladin"))
+			Fact(name("level"), value("dwa"))
+			Fact(name("place"), value("lasy")))
+		(
+		)
+	)
+	then
+		Communication.askQuestion("elephant");
+end

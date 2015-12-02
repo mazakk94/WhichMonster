@@ -1,0 +1,92 @@
+level:
+    type: multiple
+    message: "Z jakiego przedzialu masz level?"
+    options:
+    - key: jeden
+      label: "1-20"
+    - key: dwa
+      label: "21-30"
+    - key: trzy
+      label: "31-70"
+    - key: cztery
+      label: "71-150"
+horror_like:
+    type: boolean
+    message: "Lubisz horrory?"
+witcher_wannabe:
+    type: multiple
+    message: "Chcesz byc jak Wiedzmin?"
+    options:
+    - key: tak
+      label: "Tak"
+    - key: nie
+      label: "Nie"
+    - key: nie_wiem
+      label: "Nie wiem"
+rat_fear:
+    type: boolean
+    message: "Czy boisz sie szczurów?"
+animal_killer:
+	type: boolean
+    message: "Uderzylbys zwierze?"
+person_killer:
+	type: boolean
+    message: "Upolowalbys czlowieka?"
+darkness_fear:
+    type: boolean
+    message: "Czy boisz sie ciemnosci?"
+rod_type:
+    type: multiple
+    message: "Jaki typ rozdzki preferujesz?"
+    options:
+    - key: earth
+      label: "Ziemia"
+    - key: death
+      label: "Smierc"
+    - key: ice
+      label: "Lód"
+wand_type:
+    type: multiple
+    message: "Jaki typ rozdzki preferujesz?"
+    options:
+    - key: energy
+      label: "Energia"
+    - key: death
+      label: "Smierc"
+    - key: fire
+      label: "Ogien"
+	- key: null
+      label: "Obojetnie"
+place:
+    type: multiple
+    message: "W jakim klimacie chcesz przebywac?"
+    options:
+    - key: desert
+      label: "Pustynia"
+    - key: forest
+      label: "Lasy"
+    - key: dungeon
+      label: "Podziemia"
+    - key: water
+      label: "Woda"
+profession:
+    type: multiple
+    message: "Jaka profesja?"
+    options:
+    - key: sorc
+      label: "Sorcerer"
+    - key: druid
+      label: "Druid"
+    - key: knight
+      label: "Knight"
+    - key: paladin
+      label: "Paladin"
+
+	  
+	  
+	  trzeba dopisac odpowiedzi na choice;y
+elephant:
+    type: choice
+    message: "Wpadaj do lasu na slonie!"
+	
+	itp...

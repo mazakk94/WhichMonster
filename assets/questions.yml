@@ -1,6 +1,6 @@
 difficulty:
     type: multiple
-    message: "Jaka powinna byÄ‡ trudnoĹ›Ä‡ piosenki?"
+    message: "Ktory masz level?"
     options:
     - key: easy
       label: "Ĺ�atwa"
