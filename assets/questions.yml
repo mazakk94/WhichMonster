@@ -52,7 +52,7 @@ severe_solos:
 like_hard_rock:
     type: boolean
     message: "A co powiesz na hard rocka?"
-song's_length:
+level:
     type: multiple
     message: "Ĺ»yczysz sobie piosenkÄ™ krĂłtkÄ… (poniĹĽej 5 minut) czy dĹ‚ugÄ… (co najmniej 5 min)?"
     options:

@@ -40,7 +40,7 @@ rule "Ask about song's lenght"
 	when
 		Fact(name("year"))
 	then
-		Communication.askQuestion("song's_length");
+		Communication.askQuestion("level");
 end
 
 rule "Ask if song should have up to 500 notes"
@@ -131,7 +131,7 @@ rule "Ask if user like glam metal"
 			Fact(name("difficulty"), value("no_care"))
 		)
 		Fact(name("without_solo"), value(false))
-		Fact(name("song's_length"), value("short"))
+		Fact(name("level"), value("short"))
 	then
 		Communication.askQuestion("like_glam_metal");
 end
@@ -204,7 +204,7 @@ rule "Ask if user like Dragonforce"
 			Fact(name("year"), value("no_care"))
 		)
 		not Fact(name("over1000notes"), value(false))
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 	then
 		Communication.askQuestion("dragonforce");
 end

@@ -6,7 +6,7 @@ rule "When you were young"
 	salience 1000
 	when
 		Fact(name("like_alternative_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("lame_song"), value(true))
 		not Fact(name("without_solo"), value(false))
 		not Fact(name("below500notes"), value(true))
@@ -22,7 +22,7 @@ end
 rule "I love rock and roll"
 	salience 1000
 	when
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("lame_song"), value(true))
 		Fact(name("without_solo"), value(true))
 		Fact(name("below500notes"), value(true))
@@ -38,7 +38,7 @@ end
 rule "Slow ride"
 	salience 1000
 	when
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("lame_song"), value(true))
 		Fact(name("without_solo"), value(true))
 		not Fact(name("below500notes"), value(true))
@@ -54,7 +54,7 @@ end
 rule "Iron Man"
 	salience 1000
 	when
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("lame_song"), value(true))
 		not Fact(name("without_solo"), value(true))
 		not Fact(name("below500notes"), value(true))
@@ -71,7 +71,7 @@ rule "Take Me Out"
 	salience 1000
 	when
 		Fact(name("like_indie_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("lame_song"), value(true))
 		not Fact(name("without_solo"), value(true))
 		not Fact(name("below500notes"), value(true))
@@ -88,7 +88,7 @@ rule "Cherry Pie"
 	salience 1000
 	when
 		Fact(name("like_glam_metal"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("lame_song"), value(true))
 		not Fact(name("without_solo"), value(true))
 		not Fact(name("below500notes"), value(false))
@@ -105,7 +105,7 @@ rule "Talk Dirty to Me"
 	salience 1000
 	when
 		Fact(name("like_glam_metal"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("difficulty"), value("no_care"))
 		not Fact(name("without_solo"), value(true))
 		not Fact(name("below500notes"), value(true))
@@ -121,7 +121,7 @@ end
 rule "Fly on The Wall"
 	salience 1000
 	when
-		Fact(name("song's_length"), value("short"))
+		Fact(name("level"), value("short"))
 		(or
 			Fact(name("difficulty"), value("no_care"))
 			Fact(name("difficulty"), value("no_care"))
@@ -141,7 +141,7 @@ rule "Carry on Wayward Son"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		Fact(name("song's_length"), value("long"))
+		Fact(name("level"), value("long"))
 		Fact(name("difficulty"), value("medium"))
 		not Fact(name("without_solo"), value(true))
 		not Fact(name("below500notes"), value(true))
@@ -157,7 +157,7 @@ end
 rule "Through the Fire and Flames"
 	salience 1000
 	when
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 		Fact(name("dragonforce"), value(true))
 		not Fact(name("severe_solo"), value(false))
 		not Fact(name("over1000notes"), value(false))
@@ -173,7 +173,7 @@ end
 rule "Fury of the Storm"
 	salience 1000
 	when
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 		Fact(name("dragonforce"), value(true))
 		not Fact(name("severe_solo"), value(false))
 		not Fact(name("over1000notes"), value(false))
@@ -192,7 +192,7 @@ rule "The Number of The Beast"
 	salience 1000
 	when
 		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("hardcores"), value(true))
 		not Fact(name("severe_solos"), value(true))
 		not Fact(name("over1000notes"), value(false))
@@ -209,7 +209,7 @@ rule "Seek and Destroy"
 	salience 1000
 	when
 		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 		Fact(name("hardcores"), value(true))
 		not Fact(name("severe_solos"), value(false))
 		not Fact(name("over1000notes"), value(false))
@@ -226,7 +226,7 @@ rule "One"
 	salience 1000
 	when
 		Fact(name("like_heavy_metal"), value(true))
-		Fact(name("song's_length"), value("long"))
+		Fact(name("level"), value("long"))
 		Fact(name("hardcores"), value(true))
 		not Fact(name("severe_solos"), value(false))
 		not Fact(name("over1000notes"), value(false))
@@ -243,7 +243,7 @@ rule "Cliffs Of Dover"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("hardcores"), value(true))
 		Fact(name("severe_solos"), value(true))
 		not Fact(name("over1000notes"), value(false))
@@ -260,7 +260,7 @@ rule "Free Bird"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 		Fact(name("hardcores"), value(true))
 		not Fact(name("severe_solos"), value(false))
 		not Fact(name("over1000notes"), value(false))
@@ -277,7 +277,7 @@ rule "Welcome to the Jungle"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("hardcores"), value(true))
 		Fact(name("severe_solos"), value(false))
 		not Fact(name("over1000notes"), value(true))
@@ -294,7 +294,7 @@ rule "Electric Eye"
 	salience 1000
 	when
 		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		(or
 			Fact(name("difficulty"), value("medium"))
 			Fact(name("difficulty"), value("no_care"))
@@ -314,7 +314,7 @@ rule "Holy Diver"
 	salience 1000
 	when
 		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 		(or
 			Fact(name("difficulty"), value("medium"))
 			Fact(name("difficulty"), value("no_care"))
@@ -334,7 +334,7 @@ rule "No One Like You"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		(or
 			Fact(name("difficulty"), value("medium"))
 			Fact(name("difficulty"), value("no_care"))
@@ -354,7 +354,7 @@ rule "Can't You Hear Me Knocking"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		(or
 			Fact(name("difficulty"), value("medium"))
 			Fact(name("difficulty"), value("no_care"))
@@ -374,7 +374,7 @@ rule "Sweet Child O' Mine"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 		(or
 			Fact(name("difficulty"), value("medium"))
 			Fact(name("difficulty"), value("no_care"))
@@ -394,7 +394,7 @@ rule "Them Bones"
 	salience 1000
 	when
 		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		(or
 			Fact(name("difficulty"), value("medium"))
 			Fact(name("difficulty"), value("no_care"))
@@ -414,7 +414,7 @@ rule "Paranoid"
 	salience 1000
 	when
 		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		(or
 			Fact(name("difficulty"), value("medium"))
 			Fact(name("difficulty"), value("no_care"))
@@ -434,7 +434,7 @@ rule "Woman"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		(or
 			Fact(name("difficulty"), value("medium"))
 			Fact(name("difficulty"), value("no_care"))
@@ -454,7 +454,7 @@ rule "Smoke On The Water"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 		(or
 			Fact(name("difficulty"), value("no_care"))
 			Fact(name("difficulty"), value("no_care"))
@@ -475,7 +475,7 @@ rule "Wrath Child"
 	salience 1000
 	when
 		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("hardcores"), value(false))
 		not Fact(name("severe_solos"), value(true))
 		not Fact(name("over1000notes"), value(true))
@@ -493,7 +493,7 @@ rule "Monkey Wrench"
 	salience 1000
 	when
 		Fact(name("like_alternative_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("hardcores"), value(false))
 		not Fact(name("severe_solos"), value(true))
 		not Fact(name("over1000notes"), value(false))
@@ -511,7 +511,7 @@ rule "The Unforgiven"
 	salience 1000
 	when
 		Fact(name("like_heavy_metal"), value(true))
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 		Fact(name("hardcores"), value(false))
 		not Fact(name("severe_solos"), value(true))
 		not Fact(name("over1000notes"), value(true))
@@ -529,7 +529,7 @@ rule "Suck My Kiss"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		Fact(name("hardcores"), value(true))
 		not Fact(name("severe_solos"), value(true))
 		not Fact(name("over1000notes"), value(true))
@@ -549,7 +549,7 @@ rule "Here It Goes Again"
 	salience 1000
 	when
 		Fact(name("like_alternative_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		(or
 			Fact(name("difficulty"), value("no_care"))
 			Fact(name("difficulty"), value("no_care"))
@@ -570,7 +570,7 @@ rule "Tribute"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("long"))
+		not Fact(name("level"), value("long"))
 		(or
 			Fact(name("difficulty"), value("medium"))
 			Fact(name("difficulty"), value("no_care"))
@@ -591,7 +591,7 @@ rule "Thunderstruck"
 	salience 1000
 	when
 		Fact(name("like_hard_rock"), value(true))
-		not Fact(name("song's_length"), value("short"))
+		not Fact(name("level"), value("short"))
 		not Fact(name("hardcores"), value(true))	
 		not Fact(name("without_solo"), value(false))
 		not Fact(name("over1000notes"), value(true))
