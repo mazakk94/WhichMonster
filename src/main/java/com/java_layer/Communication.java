@@ -3,16 +3,22 @@ package com.java_layer;
 import java.util.Map;
 import java.util.ArrayList;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class Communication {
 	public static String getMessage(String messageName) {
 		return messageData.get(messageName);
 	}
+	public static String path = "C:\\Users\\Mazi\\Desktop\\";
 	
 	public static void showMessage(String messageName) {
 	    String message = getMessage(messageName);
-		JOptionPane.showMessageDialog(null, message);
+	    System.out.println("MessageName = " + messageName);
+	    final ImageIcon icon = new ImageIcon("C:\\Users\\Mazi\\Desktop\\donkey.gif");
+        JOptionPane.showMessageDialog(null, message, "", JOptionPane.INFORMATION_MESSAGE, icon);
+		//JOptionPane.showMessageDialog(null, message);
 	}
 
 	public static void askQuestion(String questionName) {
@@ -26,10 +32,16 @@ public class Communication {
 	}
 	
 	static void askBooleanQuestion(Question question) {
+		final Icon icon;
 		Object[] options = { "Tak", "Nie" };
-		int data = JOptionPane.showOptionDialog(null, question.message, "Choose an answer", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+		/*if (question.type.equals("choice")){
+			icon = new ImageIcon(path+"sheep.gif");//(path+ question.name +".gif");
+		} else {
+			icon = new ImageIcon(path+"smile.gif");
+		}*/
+		int data = JOptionPane.showOptionDialog(null, question.message, "", JOptionPane.DEFAULT_OPTION, /*icon*/ JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 		boolean result = data == 0;//JOptionPane.YES_OPTION;
-		if(result && question.type.equals("choice")) {
+		if(result && question.type.equals("choice")) {			
 			KnowledgeSession.addFact(new Fact("chosen", true));
 		}
 		else {
@@ -44,7 +56,7 @@ public class Communication {
 			temp.add(choice.message);
 		}
 		Object[] options = temp.toArray(new Object[temp.size()]);
-		int data = JOptionPane.showOptionDialog(null, question.message, "Choose an answer", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+		int data = JOptionPane.showOptionDialog(null, question.message, "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 		try {
 			Choice result = question.choices.get(data);
 			

@@ -4,7 +4,7 @@ import com.sample.DroolsTest.*;
 import com.java_layer.*;
 
 rule "Monster picked"
-	salience 2000
+	salience 100
 	when
 		Fact(name("chosen"), value(true))
 	then
@@ -21,14 +21,14 @@ rule "No monster"
 end
 
 rule "Ask about profession"
-	salience 10
+	salience 90
 	when
 	then
 		Communication.askQuestion("profession");
 end
 
 rule "What wand do you want to use?"
-	salience 5
+	salience 50
 	when
 		Fact(name("profession"), value("sorc"))
 	then
@@ -36,7 +36,7 @@ rule "What wand do you want to use?"
 end
 
 rule "What rod do you want to use?"
-	salience 5
+	salience 50
 	when
 		Fact(name("profession"), value("druid"))
 	then
@@ -44,7 +44,7 @@ rule "What rod do you want to use?"
 end
 
 rule "What level interval do you have?"
-	salience 1
+	salience 40
 	when
 		Fact(name("profession"))
 	then
@@ -52,7 +52,7 @@ rule "What level interval do you have?"
 end
 
 rule "Into what place would you like to go?"
-	salience 2
+	salience 30
 	when
 		Fact(name("profession"))
 		Fact(name("level"))
@@ -61,8 +61,9 @@ rule "Into what place would you like to go?"
 end
 
 rule "Would you attack an animal?"
-	salience 2
+	salience 8
 	when
+		Fact(name("witcher_wannabe"), value(false))
 		Fact(name("profession"))
 		Fact(name("level"))
 	then
@@ -70,8 +71,9 @@ rule "Would you attack an animal?"
 end
 
 rule "Would you attack a person?"
-	salience 2
+	salience 8
 	when
+		Fact(name("animal_killer"), value(true))
 		Fact(name("profession"))
 		Fact(name("level"))
 	then
@@ -79,8 +81,10 @@ rule "Would you attack a person?"
 end
 
 rule "Are you scared of insects?"
-	salience 1
+	salience 8
 	when
+		Fact(name("animal_killer"), value(false))
+		not Fact(name("rat_fear"))
 		Fact(name("profession"))
 		Fact(name("level"))
 	then
@@ -88,8 +92,10 @@ rule "Are you scared of insects?"
 end
 
 rule "Are you scared of rats?"
-	salience 1
+	salience 8
 	when
+		Fact(name("animal_killer"), value(false))
+		not Fact(name("insect_killer"))
 		Fact(name("animal_killer"), value(false))
 		Fact(name("level"))
 	then
@@ -97,16 +103,29 @@ rule "Are you scared of rats?"
 end
 
 rule "Do you like horrors?"
-	salience 1
+	salience 8
 	when
+	    Fact(name("witcher_wannabe"), value(true))
+	    not Fact(name("monster_killer"))
 		Fact(name("profession"))
 		Fact(name("level"))
 	then
 		Communication.askQuestion("horror_like");
 end
 
+rule "Do you like monsters?"
+	salience 8
+	when
+	    Fact(name("witcher_wannabe"), value(true))
+	    not Fact(name("horror_like"))
+		Fact(name("profession"))
+		Fact(name("level"))
+	then
+		Communication.askQuestion("monster_killer");
+end
+
 rule "Do you want to be like a Witcher?"
-	salience 1
+	salience 30
 	when
 		Fact(name("profession"))
 		Fact(name("level"))

@@ -12,15 +12,13 @@ level:
       label: "71-150"
 horror_like:
     type: boolean
-    message: "Lubisz horrory?"
+    message: "Nienawidzisz nieumarlych jak on?"
 witcher_wannabe:
-    type: multiple
+    type: boolean
     message: "Chcesz byc jak Wiedzmin?"
-    options:
-    - key: tak
-      label: "Tak"
-    - key: nie
-      label: "Nie"
+monster_killer:
+    type: boolean
+    message: "Nienawidzisz potworow jak on?"
 rat_fear:
     type: boolean
     message: "Czy boisz sie szczurów?"

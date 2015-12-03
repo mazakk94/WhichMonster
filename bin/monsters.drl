@@ -4,7 +4,7 @@ import com.sample.DroolsTest.*;
 import com.java_layer.*;
 
 rule "Penguin"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -12,8 +12,7 @@ rule "Penguin"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("penguin"));
@@ -21,17 +20,16 @@ rule "Penguin"
 		Communication.askQuestion("penguin");
 	end
 rule "Skunk"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
@@ -40,7 +38,7 @@ rule "Skunk"
 		Communication.askQuestion("skunk");
 	end
 rule "Badger"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -48,8 +46,7 @@ rule "Badger"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("badger"));
@@ -57,7 +54,7 @@ rule "Badger"
 		Communication.askQuestion("badger");
 	end
 rule "Rat"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -65,8 +62,7 @@ rule "Rat"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("rat_fear"), value(true))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("rat"));
@@ -74,7 +70,7 @@ rule "Rat"
 		Communication.askQuestion("rat");
 	end
 rule "Bat"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -82,11 +78,7 @@ rule "Bat"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("bat"));
@@ -94,7 +86,7 @@ rule "Bat"
 		Communication.askQuestion("bat");
 	end
 rule "Cave_Rat"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -102,7 +94,6 @@ rule "Cave_Rat"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("rat_fear"), value(true))
-	not Fact(name("wand_type"), value("energy"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -114,7 +105,7 @@ rule "Cave_Rat"
 		Communication.askQuestion("cave_rat");
 	end
 rule "Snake"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -122,8 +113,7 @@ rule "Snake"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("snake"));
@@ -131,17 +121,13 @@ rule "Snake"
 		Communication.askQuestion("snake");
 	end
 rule "Spider"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
@@ -150,7 +136,7 @@ rule "Spider"
 		Communication.askQuestion("spider");
 	end
 rule "Bug"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -158,8 +144,7 @@ rule "Bug"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("bug"));
@@ -167,7 +152,7 @@ rule "Bug"
 		Communication.askQuestion("bug");
 	end
 rule "Wolf"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -175,11 +160,7 @@ rule "Wolf"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("wolf"));
@@ -187,17 +168,16 @@ rule "Wolf"
 		Communication.askQuestion("wolf");
 	end
 rule "Frog"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("jeden"))
@@ -206,7 +186,7 @@ rule "Frog"
 		Communication.askQuestion("frog");
 	end
 rule "Hyaena"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -214,7 +194,6 @@ rule "Hyaena"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("wand_type"), value("energy"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -226,16 +205,16 @@ rule "Hyaena"
 		Communication.askQuestion("hyaena");
 	end
 rule "Island_Troll"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("island_troll"));
@@ -243,16 +222,16 @@ rule "Island_Troll"
 		Communication.askQuestion("island_troll");
 	end
 rule "Spit_Nettle"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("spit_nettle"));
@@ -260,15 +239,15 @@ rule "Spit_Nettle"
 		Communication.askQuestion("spit_nettle");
 	end
 rule "Troll"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("energy"))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
@@ -277,7 +256,7 @@ rule "Troll"
 		Communication.askQuestion("troll");
 	end
 rule "Winter_Wolf"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -285,8 +264,7 @@ rule "Winter_Wolf"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("rod_type"), value("ice"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("winter_wolf"));
@@ -294,14 +272,13 @@ rule "Winter_Wolf"
 		Communication.askQuestion("winter_wolf");
 	end
 rule "Poison_Spider"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("rod_type"), value("earth"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -313,7 +290,7 @@ rule "Poison_Spider"
 		Communication.askQuestion("poison_spider");
 	end
 rule "Bear"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -321,11 +298,7 @@ rule "Bear"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("bear"));
@@ -333,16 +306,16 @@ rule "Bear"
 		Communication.askQuestion("bear");
 	end
 rule "Frost_Troll"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("rod_type"), value("ice"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("frost_troll"));
@@ -350,7 +323,7 @@ rule "Frost_Troll"
 		Communication.askQuestion("frost_troll");
 	end
 rule "Wasp"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -358,10 +331,9 @@ rule "Wasp"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("wand_type"), value("energy"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
@@ -370,14 +342,14 @@ rule "Wasp"
 		Communication.askQuestion("wasp");
 	end
 rule "Goblin"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("rod_type"), value("earth"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -389,19 +361,16 @@ rule "Goblin"
 		Communication.askQuestion("goblin");
 	end
 rule "Orc"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("orc"));
@@ -409,16 +378,16 @@ rule "Orc"
 		Communication.askQuestion("orc");
 	end
 rule "Swamp_Troll"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("swamp_troll"));
@@ -426,7 +395,7 @@ rule "Swamp_Troll"
 		Communication.askQuestion("swamp_troll");
 	end
 rule "Polar_Bear"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -434,11 +403,7 @@ rule "Polar_Bear"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("polar_bear"));
@@ -446,7 +411,7 @@ rule "Polar_Bear"
 		Communication.askQuestion("polar_bear");
 	end
 rule "Cobra"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -454,10 +419,6 @@ rule "Cobra"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
@@ -466,7 +427,7 @@ rule "Cobra"
 		Communication.askQuestion("cobra");
 	end
 rule "Crab"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -474,8 +435,7 @@ rule "Crab"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("crab"));
@@ -483,14 +443,14 @@ rule "Crab"
 		Communication.askQuestion("crab");
 	end
 rule "Dworc_Venomsniper"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -502,7 +462,7 @@ rule "Dworc_Venomsniper"
 		Communication.askQuestion("dworc_venomsniper");
 	end
 rule "Lion"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -510,10 +470,9 @@ rule "Lion"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
@@ -522,7 +481,7 @@ rule "Lion"
 		Communication.askQuestion("lion");
 	end
 rule "Centipede"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -530,8 +489,7 @@ rule "Centipede"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("rod_type"), value("ice"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("centipede"));
@@ -539,18 +497,15 @@ rule "Centipede"
 		Communication.askQuestion("centipede");
 	end
 rule "Dworc_Fleshhunter"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("dworc_fleshhunter"));
@@ -558,15 +513,15 @@ rule "Dworc_Fleshhunter"
 		Communication.askQuestion("dworc_fleshhunter");
 	end
 rule "Skeleton"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("rod_type"), value("earth"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -578,15 +533,15 @@ rule "Skeleton"
 		Communication.askQuestion("skeleton");
 	end
 rule "Orc_Spearman"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("orc_spearman"));
@@ -594,7 +549,7 @@ rule "Orc_Spearman"
 		Communication.askQuestion("orc_spearman");
 	end
 rule "Crocodile"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -602,11 +557,7 @@ rule "Crocodile"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("crocodile"));
@@ -614,7 +565,7 @@ rule "Crocodile"
 		Communication.askQuestion("crocodile");
 	end
 rule "Rotworm"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -622,7 +573,6 @@ rule "Rotworm"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("rod_type"), value("earth"))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
@@ -631,7 +581,7 @@ rule "Rotworm"
 		Communication.askQuestion("rotworm");
 	end
 rule "Tiger"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -639,8 +589,7 @@ rule "Tiger"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("tiger"));
@@ -648,15 +597,14 @@ rule "Tiger"
 		Communication.askQuestion("tiger");
 	end
 rule "Elf"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("elf"));
@@ -664,15 +612,14 @@ rule "Elf"
 		Communication.askQuestion("elf");
 	end
 rule "Larva"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("larva"));
@@ -680,7 +627,7 @@ rule "Larva"
 		Communication.askQuestion("larva");
 	end
 rule "Dwarf"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -688,8 +635,7 @@ rule "Dwarf"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("dwarf"));
@@ -697,7 +643,7 @@ rule "Dwarf"
 		Communication.askQuestion("dwarf");
 	end
 rule "Scorpion"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -705,7 +651,6 @@ rule "Scorpion"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("wand_type"), value("energy"))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
@@ -714,7 +659,7 @@ rule "Scorpion"
 		Communication.askQuestion("scorpion");
 	end
 rule "Smuggler"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -722,8 +667,7 @@ rule "Smuggler"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("smuggler"));
@@ -731,19 +675,16 @@ rule "Smuggler"
 		Communication.askQuestion("smuggler");
 	end
 rule "Minotaur"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("minotaur"));
@@ -751,19 +692,16 @@ rule "Minotaur"
 		Communication.askQuestion("minotaur");
 	end
 rule "Orc_Warrior"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("orc_warrior"));
@@ -771,17 +709,17 @@ rule "Orc_Warrior"
 		Communication.askQuestion("orc_warrior");
 	end
 rule "Dworc_Voodoomaster"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
@@ -790,7 +728,7 @@ rule "Dworc_Voodoomaster"
 		Communication.askQuestion("dworc_voodoomaster");
 	end
 rule "War_Wolf"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -798,8 +736,7 @@ rule "War_Wolf"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("rod_type"), value("ice"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("war_wolf"));
@@ -807,14 +744,13 @@ rule "War_Wolf"
 		Communication.askQuestion("war_wolf");
 	end
 rule "Amazon"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
@@ -823,7 +759,7 @@ rule "Amazon"
 		Communication.askQuestion("amazon");
 	end
 rule "Nomad"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -831,11 +767,7 @@ rule "Nomad"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("nomad"));
@@ -843,7 +775,7 @@ rule "Nomad"
 		Communication.askQuestion("nomad");
 	end
 rule "Toad"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -851,8 +783,7 @@ rule "Toad"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("toad"));
@@ -860,7 +791,7 @@ rule "Toad"
 		Communication.askQuestion("toad");
 	end
 rule "Wild_Warrior"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -868,8 +799,7 @@ rule "Wild_Warrior"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("wild_warrior"));
@@ -877,7 +807,7 @@ rule "Wild_Warrior"
 		Communication.askQuestion("wild_warrior");
 	end
 rule "Bandit"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -885,7 +815,6 @@ rule "Bandit"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("energy"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -897,18 +826,15 @@ rule "Bandit"
 		Communication.askQuestion("bandit");
 	end
 rule "Minotaur_Archer"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("minotaur_archer"));
@@ -916,7 +842,7 @@ rule "Minotaur_Archer"
 		Communication.askQuestion("minotaur_archer");
 	end
 rule "Carrion_Worm"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -924,11 +850,7 @@ rule "Carrion_Worm"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("carrion_worm"));
@@ -936,14 +858,13 @@ rule "Carrion_Worm"
 		Communication.askQuestion("carrion_worm");
 	end
 rule "Dwarf_Soldier"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -955,18 +876,14 @@ rule "Dwarf_Soldier"
 		Communication.askQuestion("dwarf_soldier");
 	end
 rule "Elf_Scout"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("elf_scout"));
@@ -974,18 +891,15 @@ rule "Elf_Scout"
 		Communication.askQuestion("elf_scout");
 	end
 rule "Ghoul"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
@@ -994,19 +908,16 @@ rule "Ghoul"
 		Communication.askQuestion("ghoul");
 	end
 rule "Pirate_Skeleton"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("pirate_skeleton"));
@@ -1014,14 +925,13 @@ rule "Pirate_Skeleton"
 		Communication.askQuestion("pirate_skeleton");
 	end
 rule "Valkyrie"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
@@ -1030,15 +940,15 @@ rule "Valkyrie"
 		Communication.askQuestion("valkyrie");
 	end
 rule "Gazer"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("gazer"));
@@ -1046,7 +956,7 @@ rule "Gazer"
 		Communication.askQuestion("gazer");
 	end
 rule "Stalker"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1054,10 +964,6 @@ rule "Stalker"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("jeden"))
@@ -1066,7 +972,7 @@ rule "Stalker"
 		Communication.askQuestion("stalker");
 	end
 rule "Tortoise"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1074,8 +980,7 @@ rule "Tortoise"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("rod_type"), value("ice"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("tortoise"));
@@ -1083,15 +988,14 @@ rule "Tortoise"
 		Communication.askQuestion("tortoise");
 	end
 rule "Novice_of_the_Cult"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("novice_of_the_cult"));
@@ -1099,18 +1003,18 @@ rule "Novice_of_the_Cult"
 		Communication.askQuestion("novice_of_the_cult");
 	end
 rule "Quara_Mantassin_Scout"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("rod_type"), value("ice"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("jeden"))
@@ -1119,14 +1023,13 @@ rule "Quara_Mantassin_Scout"
 		Communication.askQuestion("quara_mantassin_scout");
 	end
 rule "Assassin"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("energy"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -1138,18 +1041,14 @@ rule "Assassin"
 		Communication.askQuestion("assassin");
 	end
 rule "Sibang"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("sibang"));
@@ -1157,17 +1056,16 @@ rule "Sibang"
 		Communication.askQuestion("sibang");
 	end
 rule "Lizard_Sentinel"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("energy"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
@@ -1176,19 +1074,16 @@ rule "Lizard_Sentinel"
 		Communication.askQuestion("lizard_sentinel");
 	end
 rule "Orc_Rider"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("orc_rider"));
@@ -1196,17 +1091,14 @@ rule "Orc_Rider"
 		Communication.askQuestion("orc_rider");
 	end
 rule "Orc_Shaman"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
@@ -1215,7 +1107,7 @@ rule "Orc_Shaman"
 		Communication.askQuestion("orc_shaman");
 	end
 rule "Kongra"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1223,8 +1115,7 @@ rule "Kongra"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("kongra"));
@@ -1232,7 +1123,7 @@ rule "Kongra"
 		Communication.askQuestion("kongra");
 	end
 rule "Dire_Penguin"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1241,12 +1132,8 @@ rule "Dire_Penguin"
 	)
 	not Fact(name("animal_killer"), value(false))
 	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
@@ -1255,16 +1142,16 @@ rule "Dire_Penguin"
 		Communication.askQuestion("dire_penguin");
 	end
 rule "Ghost"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("rod_type"), value("ice"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("ghost"));
@@ -1272,7 +1159,7 @@ rule "Ghost"
 		Communication.askQuestion("ghost");
 	end
 rule "Scarab"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1280,8 +1167,7 @@ rule "Scarab"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("scarab"));
@@ -1289,7 +1175,7 @@ rule "Scarab"
 		Communication.askQuestion("scarab");
 	end
 rule "Tarantula"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1297,8 +1183,7 @@ rule "Tarantula"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("jeden"))
 	not Fact(name("tarantula"));
@@ -1306,17 +1191,13 @@ rule "Tarantula"
 		Communication.askQuestion("tarantula");
 	end
 rule "Witch"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -1328,14 +1209,13 @@ rule "Witch"
 		Communication.askQuestion("witch");
 	end
 rule "Pirate_Marauder"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -1347,7 +1227,7 @@ rule "Pirate_Marauder"
 		Communication.askQuestion("pirate_marauder");
 	end
 rule "Dark_Monk"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1355,7 +1235,6 @@ rule "Dark_Monk"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("energy"))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
@@ -1364,19 +1243,16 @@ rule "Dark_Monk"
 		Communication.askQuestion("dark_monk");
 	end
 rule "Fire_Devil"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("fire_devil"));
@@ -1384,18 +1260,14 @@ rule "Fire_Devil"
 		Communication.askQuestion("fire_devil");
 	end
 rule "Merlkin"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("merlkin"));
@@ -1403,15 +1275,15 @@ rule "Merlkin"
 		Communication.askQuestion("merlkin");
 	end
 rule "Carniphila"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("rod_type"), value("earth"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -1423,21 +1295,18 @@ rule "Carniphila"
 		Communication.askQuestion("carniphila");
 	end
 rule "Cyclops"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
@@ -1446,15 +1315,15 @@ rule "Cyclops"
 		Communication.askQuestion("cyclops");
 	end
 rule "Frost_Giant"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("rod_type"), value("ice"))
-	Fact(name("profession"), value("sorc"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("frost_giant"));
@@ -1462,15 +1331,15 @@ rule "Frost_Giant"
 		Communication.askQuestion("frost_giant");
 	end
 rule "Frost_Giantess"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("rod_type"), value("ice"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
@@ -1479,16 +1348,16 @@ rule "Frost_Giantess"
 		Communication.askQuestion("frost_giantess");
 	end
 rule "Gargoyle"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("gargoyle"));
@@ -1496,18 +1365,14 @@ rule "Gargoyle"
 		Communication.askQuestion("gargoyle");
 	end
 rule "Hunter"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("hunter"));
@@ -1515,14 +1380,14 @@ rule "Hunter"
 		Communication.askQuestion("hunter");
 	end
 rule "Minotaur_Mage"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("fire"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -1534,15 +1399,15 @@ rule "Minotaur_Mage"
 		Communication.askQuestion("minotaur_mage");
 	end
 rule "Mummy"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("mummy"));
@@ -1550,7 +1415,7 @@ rule "Mummy"
 		Communication.askQuestion("mummy");
 	end
 rule "Terror_Bird"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1558,8 +1423,7 @@ rule "Terror_Bird"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("terror_bird"));
@@ -1567,7 +1431,7 @@ rule "Terror_Bird"
 		Communication.askQuestion("terror_bird");
 	end
 rule "Thornback_Tortoise"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1575,8 +1439,7 @@ rule "Thornback_Tortoise"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("rod_type"), value("ice"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("thornback_tortoise"));
@@ -1584,17 +1447,16 @@ rule "Thornback_Tortoise"
 		Communication.askQuestion("thornback_tortoise");
 	end
 rule "Lizard_Templar"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("dwa"))
@@ -1603,7 +1465,7 @@ rule "Lizard_Templar"
 		Communication.askQuestion("lizard_templar");
 	end
 rule "Blood_Crab"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1611,8 +1473,7 @@ rule "Blood_Crab"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("blood_crab"));
@@ -1620,7 +1481,7 @@ rule "Blood_Crab"
 		Communication.askQuestion("blood_crab");
 	end
 rule "Elephant"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1628,8 +1489,7 @@ rule "Elephant"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("elephant"));
@@ -1637,7 +1497,7 @@ rule "Elephant"
 		Communication.askQuestion("elephant");
 	end
 rule "Mammoth"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1645,10 +1505,6 @@ rule "Mammoth"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -1660,16 +1516,16 @@ rule "Mammoth"
 		Communication.askQuestion("mammoth");
 	end
 rule "Minotaur_Guard"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("minotaur_guard"));
@@ -1677,15 +1533,15 @@ rule "Minotaur_Guard"
 		Communication.askQuestion("minotaur_guard");
 	end
 rule "Slime"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("slime"));
@@ -1693,19 +1549,16 @@ rule "Slime"
 		Communication.askQuestion("slime");
 	end
 rule "Stone_Golem"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("stone_golem"));
@@ -1713,7 +1566,7 @@ rule "Stone_Golem"
 		Communication.askQuestion("stone_golem");
 	end
 rule "Dwarf_Guard"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1721,10 +1574,9 @@ rule "Dwarf_Guard"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
@@ -1733,15 +1585,15 @@ rule "Dwarf_Guard"
 		Communication.askQuestion("dwarf_guard");
 	end
 rule "Bonelord"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("bonelord"));
@@ -1749,15 +1601,14 @@ rule "Bonelord"
 		Communication.askQuestion("bonelord");
 	end
 rule "Elf_Arcanist"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("elf_arcanist"));
@@ -1765,17 +1616,13 @@ rule "Elf_Arcanist"
 		Communication.askQuestion("elf_arcanist");
 	end
 rule "Pirate_Cutthroat"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("dwa"))
@@ -1784,7 +1631,7 @@ rule "Pirate_Cutthroat"
 		Communication.askQuestion("pirate_cutthroat");
 	end
 rule "Barbarian_Bloodwalker"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1792,10 +1639,6 @@ rule "Barbarian_Bloodwalker"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -1807,15 +1650,15 @@ rule "Barbarian_Bloodwalker"
 		Communication.askQuestion("barbarian_bloodwalker");
 	end
 rule "Crypt_Shambler"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("energy"))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
@@ -1824,19 +1667,16 @@ rule "Crypt_Shambler"
 		Communication.askQuestion("crypt_shambler");
 	end
 rule "Orc_Berserker"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("orc_berserker"));
@@ -1844,7 +1684,7 @@ rule "Orc_Berserker"
 		Communication.askQuestion("orc_berserker");
 	end
 rule "Monk"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -1852,10 +1692,9 @@ rule "Monk"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
@@ -1864,15 +1703,15 @@ rule "Monk"
 		Communication.askQuestion("monk");
 	end
 rule "Quara_Constrictor_Scout"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("dwa"))
@@ -1881,15 +1720,14 @@ rule "Quara_Constrictor_Scout"
 		Communication.askQuestion("quara_constrictor_scout");
 	end
 rule "Lizard_Snakecharmer"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("lizard_snakecharmer"));
@@ -1897,15 +1735,15 @@ rule "Lizard_Snakecharmer"
 		Communication.askQuestion("lizard_snakecharmer");
 	end
 rule "Blue_Djinn"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("rod_type"), value("ice"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("blue_djinn"));
@@ -1913,19 +1751,16 @@ rule "Blue_Djinn"
 		Communication.askQuestion("blue_djinn");
 	end
 rule "Green_Djinn"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("green_djinn"));
@@ -1933,16 +1768,16 @@ rule "Green_Djinn"
 		Communication.askQuestion("green_djinn");
 	end
 rule "Fire_Elemental"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("fire_elemental"));
@@ -1950,15 +1785,15 @@ rule "Fire_Elemental"
 		Communication.askQuestion("fire_elemental");
 	end
 rule "Demon_Skeleton"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("rod_type"), value("earth"))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("dwa"))
@@ -1967,14 +1802,13 @@ rule "Demon_Skeleton"
 		Communication.askQuestion("demon_skeleton");
 	end
 rule "Pirate_Buccaneer"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -1986,19 +1820,16 @@ rule "Pirate_Buccaneer"
 		Communication.askQuestion("pirate_buccaneer");
 	end
 rule "Pirate_Ghost"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("pirate_ghost"));
@@ -2006,18 +1837,18 @@ rule "Pirate_Ghost"
 		Communication.askQuestion("pirate_ghost");
 	end
 rule "Quara_Constrictor"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("profession"), value("paladin"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("dwa"))
@@ -2026,15 +1857,14 @@ rule "Quara_Constrictor"
 		Communication.askQuestion("quara_constrictor");
 	end
 rule "Dwarf_Geomancer"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("dwarf_geomancer"));
@@ -2042,18 +1872,15 @@ rule "Dwarf_Geomancer"
 		Communication.askQuestion("dwarf_geomancer");
 	end
 rule "Orc_Leader"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("orc_leader"));
@@ -2061,17 +1888,14 @@ rule "Orc_Leader"
 		Communication.askQuestion("orc_leader");
 	end
 rule "Elder_Bonelord"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
@@ -2080,17 +1904,14 @@ rule "Elder_Bonelord"
 		Communication.askQuestion("elder_bonelord");
 	end
 rule "Ice_Golem"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2102,15 +1923,14 @@ rule "Ice_Golem"
 		Communication.askQuestion("ice_golem");
 	end
 rule "Acolyte_of_the_Cult"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("dwa"))
 	not Fact(name("acolyte_of_the_cult"));
@@ -2118,19 +1938,16 @@ rule "Acolyte_of_the_Cult"
 		Communication.askQuestion("acolyte_of_the_cult");
 	end
 rule "Vampire"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("vampire"));
@@ -2138,17 +1955,17 @@ rule "Vampire"
 		Communication.askQuestion("vampire");
 	end
 rule "Efreet"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("energy"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("trzy"))
@@ -2157,15 +1974,15 @@ rule "Efreet"
 		Communication.askQuestion("efreet");
 	end
 rule "Marid"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("marid"));
@@ -2173,18 +1990,14 @@ rule "Marid"
 		Communication.askQuestion("marid");
 	end
 rule "Pirate_Corsair"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("pirate_corsair"));
@@ -2192,14 +2005,13 @@ rule "Pirate_Corsair"
 		Communication.askQuestion("pirate_corsair");
 	end
 rule "Adept_of_the_Cult"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("wand_type"), value("energy"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2211,16 +2023,16 @@ rule "Adept_of_the_Cult"
 		Communication.askQuestion("adept_of_the_cult");
 	end
 rule "Quara_Predator_Scout"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("quara_predator_scout"));
@@ -2228,17 +2040,13 @@ rule "Quara_Predator_Scout"
 		Communication.askQuestion("quara_predator_scout");
 	end
 rule "Priestess"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("trzy"))
@@ -2247,17 +2055,13 @@ rule "Priestess"
 		Communication.askQuestion("priestess");
 	end
 rule "Enlightenergiad_of_the_Cult"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("trzy"))
@@ -2266,18 +2070,15 @@ rule "Enlightenergiad_of_the_Cult"
 		Communication.askQuestion("enlightenergiad_of_the_cult");
 	end
 rule "Bonebeast"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("trzy"))
@@ -2286,7 +2087,7 @@ rule "Bonebeast"
 		Communication.askQuestion("bonebeast");
 	end
 rule "Ice_Witch"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
@@ -2294,12 +2095,8 @@ rule "Ice_Witch"
 	)
 	not Fact(name("person_killer"), value(false))
 	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("trzy"))
@@ -2308,14 +2105,13 @@ rule "Ice_Witch"
 		Communication.askQuestion("ice_witch");
 	end
 rule "Nekromancer"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2327,15 +2123,15 @@ rule "Nekromancer"
 		Communication.askQuestion("nekromancer");
 	end
 rule "Quara_Pincher_Scout"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2347,15 +2143,15 @@ rule "Quara_Pincher_Scout"
 		Communication.askQuestion("quara_pincher_scout");
 	end
 rule "Water_Elemental"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("water_elemental"));
@@ -2363,18 +2159,15 @@ rule "Water_Elemental"
 		Communication.askQuestion("water_elemental");
 	end
 rule "Orc_Warlord"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("orc_warlord"));
@@ -2382,16 +2175,16 @@ rule "Orc_Warlord"
 		Communication.askQuestion("orc_warlord");
 	end
 rule "Dragon"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("dragon"));
@@ -2399,7 +2192,7 @@ rule "Dragon"
 		Communication.askQuestion("dragon");
 	end
 rule "Ancient_Scarab"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -2407,7 +2200,6 @@ rule "Ancient_Scarab"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("profession"), value("paladin"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2419,15 +2211,14 @@ rule "Ancient_Scarab"
 		Communication.askQuestion("ancient_scarab");
 	end
 rule "Man_in_the_Cave"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("man_in_the_cave"));
@@ -2435,16 +2226,16 @@ rule "Man_in_the_Cave"
 		Communication.askQuestion("man_in_the_cave");
 	end
 rule "Massive_Water_Elemental"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("massive_water_elemental"));
@@ -2452,14 +2243,14 @@ rule "Massive_Water_Elemental"
 		Communication.askQuestion("massive_water_elemental");
 	end
 rule "Quara_Hydromancer"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("rod_type"), value("ice"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2471,15 +2262,15 @@ rule "Quara_Hydromancer"
 		Communication.askQuestion("quara_hydromancer");
 	end
 rule "Quara_Hydromancer_Scout"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("rod_type"), value("ice"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("trzy"))
@@ -2488,16 +2279,16 @@ rule "Quara_Hydromancer_Scout"
 		Communication.askQuestion("quara_hydromancer_scout");
 	end
 rule "Banshee"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("banshee"));
@@ -2505,17 +2296,16 @@ rule "Banshee"
 		Communication.askQuestion("banshee");
 	end
 rule "Crystal_Spider"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	not Fact(name("rod_type"), value("earth"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("trzy"))
@@ -2524,7 +2314,7 @@ rule "Crystal_Spider"
 		Communication.askQuestion("crystal_spider");
 	end
 rule "Giant_Spider"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
@@ -2532,10 +2322,6 @@ rule "Giant_Spider"
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("insect_killer"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("trzy"))
@@ -2544,18 +2330,15 @@ rule "Giant_Spider"
 		Communication.askQuestion("giant_spider");
 	end
 rule "Braindeath"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("sorc"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("wand_type"), value("energy"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("braindeath"));
@@ -2563,17 +2346,16 @@ rule "Braindeath"
 		Communication.askQuestion("braindeath");
 	end
 rule "Hero"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
 	(or
-	Fact(name("profession"), value("sorc"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("wand_type"), value("death"))
+	Fact(name("rod_type"), value("death"))
 	)
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("trzy"))
@@ -2582,18 +2364,15 @@ rule "Hero"
 		Communication.askQuestion("hero");
 	end
 rule "Quara_Pincher"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2605,14 +2384,13 @@ rule "Quara_Pincher"
 		Communication.askQuestion("quara_pincher");
 	end
 rule "Black_Knight"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	not Fact(name("rod_type"), value("earth"))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("trzy"))
@@ -2621,16 +2399,16 @@ rule "Black_Knight"
 		Communication.askQuestion("black_knight");
 	end
 rule "Quara_Predator"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("trzy"))
 	not Fact(name("quara_predator"));
@@ -2638,15 +2416,15 @@ rule "Quara_Predator"
 		Communication.askQuestion("quara_predator");
 	end
 rule "Dragon_Lord"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("fire"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("cztery"))
@@ -2655,19 +2433,16 @@ rule "Dragon_Lord"
 		Communication.askQuestion("dragon_lord");
 	end
 rule "Frost_Dragon"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("frost_dragon"));
@@ -2675,15 +2450,14 @@ rule "Frost_Dragon"
 		Communication.askQuestion("frost_dragon");
 	end
 rule "Hydra"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("hydra"));
@@ -2691,19 +2465,16 @@ rule "Hydra"
 		Communication.askQuestion("hydra");
 	end
 rule "Spectre"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("spectre"));
@@ -2711,14 +2482,14 @@ rule "Spectre"
 		Communication.askQuestion("spectre");
 	end
 rule "Nightmare"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2730,18 +2501,15 @@ rule "Nightmare"
 		Communication.askQuestion("nightmare");
 	end
 rule "Behemoth"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("behemoth"));
@@ -2749,14 +2517,14 @@ rule "Behemoth"
 		Communication.askQuestion("behemoth");
 	end
 rule "Destroyer"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("cztery"))
@@ -2765,14 +2533,14 @@ rule "Destroyer"
 		Communication.askQuestion("destroyer");
 	end
 rule "Diabolic_Imp"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("fire"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("cztery"))
@@ -2781,15 +2549,14 @@ rule "Diabolic_Imp"
 		Communication.askQuestion("diabolic_imp");
 	end
 rule "Serpent_Spawn"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("animal_killer"), value(false))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("serpent_spawn"));
@@ -2797,19 +2564,16 @@ rule "Serpent_Spawn"
 		Communication.askQuestion("serpent_spawn");
 	end
 rule "Betrayed_Wraith"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("betrayed_wraith"));
@@ -2817,14 +2581,14 @@ rule "Betrayed_Wraith"
 		Communication.askQuestion("betrayed_wraith");
 	end
 rule "Defiler"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2836,15 +2600,15 @@ rule "Defiler"
 		Communication.askQuestion("defiler");
 	end
 rule "Hellfire_Fighter"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("wand_type"), value("fire"))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2856,19 +2620,16 @@ rule "Hellfire_Fighter"
 		Communication.askQuestion("hellfire_fighter");
 	end
 rule "Lost_Soul"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("lost_soul"));
@@ -2876,18 +2637,14 @@ rule "Lost_Soul"
 		Communication.askQuestion("lost_soul");
 	end
 rule "Warlock"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
 	not Fact(name("person_killer"), value(false))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("warlock"));
@@ -2895,15 +2652,15 @@ rule "Warlock"
 		Communication.askQuestion("warlock");
 	end
 rule "Phantasm"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("sorc"))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("phantasm"));
@@ -2911,14 +2668,14 @@ rule "Phantasm"
 		Communication.askQuestion("phantasm");
 	end
 rule "Fury"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("fire"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("cztery"))
@@ -2927,15 +2684,15 @@ rule "Fury"
 		Communication.askQuestion("fury");
 	end
 rule "Plaguesmith"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("cztery"))
@@ -2944,15 +2701,15 @@ rule "Plaguesmith"
 		Communication.askQuestion("plaguesmith");
 	end
 rule "Dark_Torturer"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("desert"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("dark_torturer"));
@@ -2960,15 +2717,15 @@ rule "Dark_Torturer"
 		Communication.askQuestion("dark_torturer");
 	end
 rule "Hand_of_Cursed_Fate"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
 	(or
 	Fact(name("profession"), value("paladin"))
 	Fact(name("profession"), value("knight"))
@@ -2980,17 +2737,14 @@ rule "Hand_of_Cursed_Fate"
 		Communication.askQuestion("hand_of_cursed_fate");
 	end
 rule "Blinghtwalker"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
+	not Fact(name("witcher_wannabe"), value(false))
 	not Fact(name("horror_like"), value(true))
-	(or
-		not Fact(name("rod_type"), value("death"))
-		not Fact(name("wand_type"), value("death"))
-	)
 	Fact(name("profession"), value("paladin"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("cztery"))
@@ -2999,16 +2753,16 @@ rule "Blinghtwalker"
 		Communication.askQuestion("blinghtwalker");
 	end
 rule "Demon"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("sorc"))
 		Fact(name("profession"), value("druid"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("fire"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("demon"));
@@ -3016,18 +2770,15 @@ rule "Demon"
 		Communication.askQuestion("demon");
 	end
 rule "Hellhound"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	(or
-		not Fact(name("profession"), value("knight"))
-		not Fact(name("profession"), value("paladin"))
-	)
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("earth"))
 	Fact(name("place"), value("water"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("hellhound"));
@@ -3035,15 +2786,15 @@ rule "Hellhound"
 		Communication.askQuestion("hellhound");
 	end
 rule "Undead_Dragon"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("profession"), value("paladin"))
-	Fact(name("profession"), value("druid"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("rod_type"), value("ice"))
 	Fact(name("place"), value("forest"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("undead_dragon"));
@@ -3051,15 +2802,15 @@ rule "Undead_Dragon"
 		Communication.askQuestion("undead_dragon");
 	end
 rule "Juggernaut"
-	salience 1000
+	salience 9
 	when
 	(or
 		Fact(name("profession"), value("paladin"))
 		Fact(name("profession"), value("knight"))
 	)
-	not Fact(name("witcher_wannabe"), value(true))
-	not Fact(name("wand_type"), value("energy"))
-	Fact(name("profession"), value("sorc"))
+	not Fact(name("witcher_wannabe"), value(false))
+	not Fact(name("monster_killer"), value(false))
+	Fact(name("wand_type"), value("fire"))
 	Fact(name("place"), value("dungeon"))
 	Fact(name("level"), value("cztery"))
 	not Fact(name("juggernaut"));
